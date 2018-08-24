@@ -1,0 +1,140 @@
+/*
+
+Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
+
+*/
+.hljs {
+  display: block;
+  position: relative;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #f3f3f6;
+  color: black;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable,
+.hljs-addition {
+  color: #008000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+  color: #00f;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-deletion {
+  color: #a31515;
+}
+
+.hljs-number {
+  color: #f3f;
+}
+
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+  color: #2b91af;
+}
+
+.hljs-doctag {
+  color: #808080;
+}
+
+.hljs-attr {
+  color: #f00;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #00b0e8;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs::after {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  padding: 0 4px;
+  color: #666;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.hljs.lang-js::after, .hljs.javascript::after {
+  content: "js";
+}
+
+.hljs.lang-ts::after, .hljs.typescript::after {
+  content: "ts";
+}
+
+.hljs.lang-json::after {
+  content: "json";
+}
+
+.hljs.lang-html::after, .hljs.html::after {
+  content: "html";
+}
+
+.hljs.lang-css::after, .hljs.css::after {
+  content: "css";
+}
+
+.hljs.lang-less::after, .hljs.less {
+  content: "less";
+}
+
+.hljs.lang-scss::after, .hljs.lang-sass::after,
+.hljs.scss::after, .hljs.sass::after {
+  content: "sass";
+}
+
+.hljs.lang-bash::after, .hljs.lang-sh::after, .hljs.bash::after {
+  content: "sh";
+}
+
+.hljs.lang-diff::after, .hljs.diff::after {
+  content: "diff";
+}
+
+.hljs.lang-sql::after, .hljs.sql::after {
+  content: "sql";
+}
+
+.hljs.lang-java::after, .hljs.java::after {
+  content: "java";
+}
+
+.hljs.lang-kt::after, .hljs.kt::after {
+  content: "kt";
+}
+
+.hljs.lang-scala::after, .hljs.scala::after {
+  content: "sc";
+}
+
+.hljs.lang-php::after, .hljs.php::after {
+  content: "php";
+}

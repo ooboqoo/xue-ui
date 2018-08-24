@@ -1,0 +1,19 @@
+.xue-tip
+  position: absolute
+  padding: 2px 5px
+  max-width: 420px
+  background-color: #ccc
+  border-radius: 4px
+  color: #333
+  z-index: 9998
+  &::after
+    content: ""
+    border-width: 5px 5px 0
+    border-left-color: transparent !important
+    border-right-color: transparent !important
+    border-bottom-color: transparent !important
+    bottom: -5px
+    left: calc(50% - 5px)
+    border-style: solid
+    position: absolute
+    border-color: #ccc
