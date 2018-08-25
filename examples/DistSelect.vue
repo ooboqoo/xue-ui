@@ -4,7 +4,7 @@
     <div class="content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-dist-select v-model="dist"></xue-dist-select>
+        <xue-dist-select v-model="dist" style="max-width:420px;"></xue-dist-select>
         <xue-dist-select :level="1" v-model="prov"></xue-dist-select>
       </div>
       <div class="markdown" v-html="markdown"></div>
@@ -32,9 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-dist-select {
-  .demo {
-    max-width: 600px;
-  }
 }
 </style>
 
