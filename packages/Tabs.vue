@@ -1,8 +1,15 @@
 <template>
   <div class="xue-tabs">
-    <router-link v-for="(link, idx) in links" :key="idx" :to="link.url">
-      {{link.text}}<sup class="badge-dot" v-if="link.dot"></sup>
-    </router-link>
+    <template v-if="links">
+      <router-link v-for="(link, idx) in links" :key="idx" :to="link.url">
+        {{link.text}}<sup class="badge-dot" v-if="link.dot"></sup>
+      </router-link>
+    </template>
+    <template v-if="tabs">
+      <a v-for="(tab, idx) in tabs" :key="idx" :class="{active: tab.active}" @click="tab.click">
+        {{tab.text}}<sup class="badge-dot" v-if="tab.dot"></sup>
+      </a>
+    </template>
   </div>
 </template>
 
@@ -10,6 +17,7 @@
 export default {
   props: {
     links: Array,
+    tabs: Array,
   },
 }
 </script>
@@ -40,7 +48,7 @@ export default {
     border-radius: 0 3px 3px 0;
     border-left: 0;
   }
-  &.router-link-exact-active {
+  &.active, &.router-link-exact-active {
     color: #fff;
     background-color: #8b9eb6;
     border-color: #8b9eb6;
