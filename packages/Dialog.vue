@@ -11,7 +11,7 @@
     <div class="dialog-wrapper" ref="wrapper">
       <div class="dialog-header">
         <a v-if="showClose" @click="close">
-          <svg class="icon close"><use xlink:href="#icon-close"></use></svg>
+          <svg class="icon-svg close"><use xlink:href="#icon-close"></use></svg>
         </a>
         <slot name="header">
           <div class="dialog-header">{{title}}</div>

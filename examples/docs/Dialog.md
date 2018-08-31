@@ -26,6 +26,17 @@
 | cancel  | 点击取消按钮时触发
 | confirm | 点击确认按钮时触发
 
+### openDialog
+
+```ts
+function openDialog({ options, slots, slotData, callback }: {
+  options: any;
+  slots: any;
+  slotData?: { [x: string]: any; };
+  callback: vm => void;
+}): Promise<any>
+```
+
 ### 示例完整代码
 
 ```html
@@ -62,10 +73,12 @@ export default {
     openModal2 () {
       openDialog({
         options: {
-          title: '通过方法生成弹窗',
+          propsData: {
+            title: '通过方法生成弹窗',
+          }
         },
         slots: {
-          default: '<div style="border: 1px solid red;">{{text}}</>',
+          default: '<div style="border: 1px solid red;">{{text}}</div>',
         },
         slotData: {
           text: 'body here',

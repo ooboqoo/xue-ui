@@ -41,7 +41,9 @@ export default {
     openModal2 () {
       openDialog({
         options: {
-          title: '通过方法生成弹窗',
+          propsData: {
+            title: '通过方法生成弹窗',
+          }
         },
         slots: {
           default: '<div style="border: 1px solid red;">{{text}}</div>',
