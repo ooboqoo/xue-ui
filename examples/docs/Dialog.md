@@ -33,7 +33,7 @@ function openDialog({ options, slots, slotData, callback }: {
   options: any;
   slots: any;
   slotData?: { [x: string]: any; };
-  callback: vm => void;
+  callback?: vm => void;
 }): Promise<any>
 ```
 

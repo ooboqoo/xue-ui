@@ -119,30 +119,30 @@ export default {
 <style lang="scss">
 .xue-select {
   position: relative;
-  min-width: 160px;
-  height: 40px;
-  margin: 10px 1px;
   display: inline-block;
-  vertical-align: middle;
+  min-width: 160px;
   input {
     -webkit-appearance: none;
     outline: none;
     display: inline-block;
     padding: 0 15px;
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 2em;
+    line-height: 2em;
     background-color: #fff;
     background-image: none;
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: inherit;
     color: #333;
   }
   .caret {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 15px;
+    height: 100%;
+    font-size: inherit;
     color: #ddd;
     transition: transform .3s;
     pointer-events: none;
@@ -151,7 +151,7 @@ export default {
     }
     svg {
       width: 1em;
-      height: 1em;
+      height: 100%;
       > path {
         stroke: currentColor;
         stroke-width: 3px;
