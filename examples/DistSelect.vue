@@ -4,7 +4,9 @@
     <div class="content">
       <h3>示例</h3>
       <div class="demo">
+        <p>省市区三级联动：</p>
         <xue-dist-select v-model="dist" style="max-width:420px;"></xue-dist-select>
+        <p>只有省一级：</p>
         <xue-dist-select :level="1" v-model="prov"></xue-dist-select>
       </div>
       <div class="markdown" v-html="markdown"></div>
