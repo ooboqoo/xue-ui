@@ -109,7 +109,7 @@ module.exports.module = {
 
 module.exports.serve = {
   content: [__dirname],
-  dev: {
+  devMiddleware: {
     stats: 'minimal'
   }
 }
