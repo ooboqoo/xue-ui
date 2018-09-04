@@ -1,5 +1,5 @@
 <template>
-  <button class="xue-button" @click="onClick">
+  <button class="xue-button" :class="{disabled}" @click="onClick">
     <span v-if="onloading">加载中...</span>
     <slot v-else></slot>
   </button>
@@ -8,6 +8,7 @@
 <script>
 export default {
   props: {
+    disabled: Boolean,
     loading: {
       type: [Boolean, Promise],
       default: false
@@ -21,6 +22,7 @@ export default {
   },
   methods: {
     onClick (event) {
+      if (this.disabled) { return }
       if (this.async) {
         this.onloading = true
         this.async().finally(() => {
@@ -63,14 +65,12 @@ $gray: #6c757d;
   vertical-align: middle;
   white-space: nowrap;
   user-select: none;
+  cursor: pointer;
 
   &.disabled,
   &:disabled {
     opacity: .5;
-  }
-
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
+    cursor: not-allowed;
   }
 
   &.btn-primary {
