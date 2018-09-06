@@ -9,5 +9,6 @@ export { default as XueRate } from './packages/Rate'
 export { default as XueTabs } from './packages/Tabs'
 export { default as XueDialog } from './packages/Dialog'
 export { default as XueTooltip } from './packages/tooltip'
+export { default as XueScrollLoad } from './packages/ScrollLoad'
 
 export { openDialog } from './packages/openDialog'

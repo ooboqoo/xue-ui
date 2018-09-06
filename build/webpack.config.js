@@ -24,6 +24,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
     }
   },
+  devtool: 'inline-source-map',
   optimization: {
     splitChunks: {
       cacheGroups: {

@@ -33,6 +33,7 @@
     <ul>
       <li><router-link to="/dialog">Dialog 对话框</router-link></li>
       <li><router-link to="/tooltip">Tooltip 文字提示</router-link></li>
+      <li><router-link to="/scroll-load">ScrollLoad 滚动加载</router-link></li>
     </ul>
   </section>
 </div>

@@ -12,6 +12,7 @@ import Rate from './Rate'
 import Tabs from './Tabs'
 import Dialog from './Dialog'
 import Tooltip from './Tooltip'
+import ScrollLoad from './ScrollLoad'
 
 import Readme from './Readme'
 
@@ -66,6 +67,10 @@ const routes = [
   {
     path: '/tooltip',
     component: Tooltip
+  },
+  {
+    path: '/scroll-load',
+    component: ScrollLoad
   },
   {
     path: '',
