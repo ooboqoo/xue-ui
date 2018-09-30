@@ -3,7 +3,7 @@
     <input v-if="filter" :placeholder="_placeholder" @blur="onBlur" ref="input"
            @click="toggleMenu()" @input="onInput" @compositionstart="isComposing = true" @compositionend="isComposing = false; filterOption($event)">
     <input v-else :value="selected.label" :placeholder="_placeholder" @blur="onBlur" ref="input"
-           @click="toggleMenu()">
+           @click="toggleMenu()" @input="$event.target.value = selected.label || ''">
     <span class="caret" :class="{up: showMenu}">
       <svg viewBox="0 0 32 32"><path fill="none" d="M4,8 L16.5,27 L29,8"></path></svg>
     </span>
