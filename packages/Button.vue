@@ -1,6 +1,6 @@
 <template>
   <button class="xue-button" :class="{disabled}" @click="onClick">
-    <span v-if="onloading">加载中...</span>
+    <span v-if="onloading">{{text || '加载中...'}}</span>
     <slot v-else></slot>
   </button>
 </template>
@@ -13,7 +13,8 @@ export default {
       type: [Boolean, Promise],
       default: false
     },
-    async: Function
+    async: Function,
+    text: String,
   },
   data () {
     return {
@@ -49,10 +50,11 @@ export default {
 $blue: #0099ff;
 $light-blue: #11aaff;
 $gray: #6c757d;
+$light-gray: #ccc;
 
 .xue-button {
   + .xue-button {
-    margin-left: 5px;
+    margin-left: 8px;
   }
   display: inline-block;
   padding: .375rem .75rem;
@@ -95,13 +97,34 @@ $gray: #6c757d;
     background-color: transparent;
     background-image: none;
     border-color: $blue;
+    &:not(:disabled):not(.disabled):hover {
+      background-color: #f3f3ff;
+    }
   }
 
   &.btn-outline-secondary {
     color: $gray;
     background-color: transparent;
     background-image: none;
-    border-color: $gray;
+    border-color: $light-gray;
+    &:not(:disabled):not(.disabled):hover {
+      color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  &.large {
+    padding: .6rem 1rem;
+    + .xue-button {
+      margin-left: 10px;
+    }
+  }
+
+  &.small {
+    padding: .2rem .5rem;
+    + .xue-button {
+      margin-left: 5px;
+    }
   }
 }
 </style>

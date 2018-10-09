@@ -9,7 +9,7 @@
 export default {
   props: {
     value: String,
-    maxlength: Number,
+    maxlength: [Number, String],
     placeholder: String
   },
   data () {
@@ -24,7 +24,8 @@ export default {
     text (val) {
       this.$emit('input', val)
       this.$emit('change', val)
-    }
+    },
+    value (val) { this.text = this.value }
   },
   created () {
     if (this.value) { this.text = this.value }

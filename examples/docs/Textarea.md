@@ -3,7 +3,7 @@
 ```html
 <template>
   <div class="demo">
-    <xue-textarea v-model="value" :maxlength="200" :placeholder="'第一行\n第二行'"></xue-textarea>
+    <xue-textarea v-model="value" maxlength="200" :placeholder="'第一行\n第二行'"></xue-textarea>
   </div>
 </template>
 

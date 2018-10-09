@@ -123,7 +123,6 @@ export default {
   min-width: 160px;
   input {
     -webkit-appearance: none;
-    outline: none;
     display: inline-block;
     padding: 0 15px;
     width: 100%;
@@ -163,7 +162,7 @@ export default {
     max-height: 274px;
     list-style: none;
     padding: 6px 0;
-    margin: 0;
+    margin: 2px 0 0;
     min-width: 100%;
     box-sizing: border-box;
     background-color: #fff;
@@ -172,7 +171,7 @@ export default {
     z-index: 999;
     li {
       position: relative;
-      padding: 0 20px;
+      padding: 0 15px;
       font-size: 14px;
       color: #606266;
       height: 34px;

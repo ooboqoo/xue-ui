@@ -1,9 +1,10 @@
 ### 参数
 
-参数     | 说明             | 类型                        | 默认值
----------|-----------------|-----------------------------|----------
-loading  | 下拉列表选项     | [Boolean, Promise<Boolean>] | false
-async    | 输入框提示文案   | Function                    | null
+参数     | 说明                    | 类型                        | 默认值
+---------|------------------------|-----------------------------|----------
+loading  | 下拉列表选项            | [Boolean, Promise<Boolean>] | false
+async    | 输入框提示文案          | Function                    | null
+text     | 处于加载状态时的提示文案 | String                      | '加载中...'
 
 ### 示例完整代码
 
@@ -16,6 +17,10 @@ async    | 输入框提示文案   | Function                    | null
   <br><br>
   <xue-button class="btn-outline-primary">btn-outline-primary</xue-button>
   <xue-button class="btn-outline-secondary">btn-outline-secondary</xue-button>
+  <h4>按钮尺寸</h4>
+  <xue-button class="btn-primary large">btn-primary large</xue-button>
+  <xue-button class="btn-primary">btn-primary</xue-button>
+  <xue-button class="btn-primary small">btn-primary small</xue-button>
   <h4>异步操作状态指示 - 用法1</h4>
   <!-- 外部组件自己维护状态，这样使用灵活性更高 -->
   <xue-button class="btn-primary" :loading="onloading1" @click="asyncOp1">加载省</xue-button>
@@ -23,7 +28,7 @@ async    | 输入框提示文案   | Function                    | null
   {{prov}} - {{provCapital}}
   <h4>异步操作状态指示 - 用法2</h4>
   <!-- 外部组件不用自己维护状态，直接传入一个异步方法，方便使用但不够灵活 -->
-  <xue-button class="btn-primary" :async="loadProv">执行异步任务</xue-button>
+  <xue-button class="btn-primary" :async="loadProv" text="提交中...">执行异步任务</xue-button>
 </div>
 </template>
 
