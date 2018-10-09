@@ -5,6 +5,7 @@ import Button from './Button'
 import Radio from './Radio'
 import Checkbox from './Checkbox'
 import Select from './Select'
+import Textarea from './Textarea'
 import DatePicker from './DatePicker'
 import DateSelect from './DateSelect'
 import DistSelect from './DistSelect'
@@ -34,6 +35,10 @@ const routes = [
   {
     path: '/select',
     component: Select
+  },
+  {
+    path: '/textarea',
+    component: Textarea
   },
   {
     path: '/date-picker',

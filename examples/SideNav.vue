@@ -16,6 +16,7 @@
       <li><router-link to="/radio">Radio 单选框</router-link></li>
       <li><router-link to="/checkbox">Checkbox 多选框</router-link></li>
       <li><router-link to="/select">Select 选择器</router-link></li>
+      <li><router-link to="/textarea">Textarea 文本框</router-link></li>
       <li><router-link to="/date-picker">DatePicker 日期选择器</router-link></li>
       <li><router-link to="/date-select">DateSelect 日期选择框</router-link></li>
       <li><router-link to="/dist-select">DistSelect 省市区三级联动</router-link></li>
