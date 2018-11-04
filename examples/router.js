@@ -9,6 +9,7 @@ import Textarea from './Textarea'
 import DatePicker from './DatePicker'
 import DateSelect from './DateSelect'
 import DistSelect from './DistSelect'
+import Slider from './Slider'
 import Rate from './Rate'
 import Tabs from './Tabs'
 import Dialog from './Dialog'
@@ -55,6 +56,10 @@ const routes = [
   {
     path: '/rate',
     component: Rate
+  },
+  {
+    path: '/slider',
+    component: Slider
   },
   {
     path: '/tabs',

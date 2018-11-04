@@ -21,6 +21,7 @@
       <li><router-link to="/date-select">DateSelect 日期选择框</router-link></li>
       <li><router-link to="/dist-select">DistSelect 省市区三级联动</router-link></li>
       <li><router-link to="/rate">Rate 评分</router-link></li>
+      <li><router-link to="/slider">Slider 滑块</router-link></li>
     </ul>
   </section>
   <section>
