@@ -10,6 +10,9 @@
       </div>
       <div class="markdown" v-html="markdown"></div>
     </div>
+    <div>
+      <slider-audio></slider-audio>
+    </div>
   </div>
 </template>
 
@@ -17,9 +20,12 @@
 import { XueSlider } from 'xue-ui'
 import markdown from './docs/Slider.md'
 
+import SliderAudio from './SliderAudio'
+
 export default {
   components: {
     XueSlider,
+    SliderAudio,
   },
   data () {
     return {
