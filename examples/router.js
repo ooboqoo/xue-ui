@@ -13,6 +13,7 @@ import Slider from './Slider'
 import Rate from './Rate'
 import Tabs from './Tabs'
 import Dialog from './Dialog'
+import Notification from './Notification'
 import Tooltip from './Tooltip'
 import ScrollLoad from './ScrollLoad'
 
@@ -73,6 +74,10 @@ const routes = [
   {
     path: '/dialog',
     component: Dialog
+  },
+  {
+    path: '/notification',
+    component: Notification
   },
   {
     path: '/tooltip',

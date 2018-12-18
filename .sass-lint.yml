@@ -1,0 +1,10 @@
+rules:
+  indentation:
+    - 2
+    -
+      size: 2
+  # https://github.com/sasstools/sass-lint/blob/master/docs/rules/property-sort-order.md
+  property-sort-order:
+    - 1
+    -
+      order: 'smacss'

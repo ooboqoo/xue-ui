@@ -10,6 +10,7 @@ export { default as XueSlider } from './packages/Slider'
 export { default as XueRate } from './packages/Rate'
 export { default as XueTabs } from './packages/Tabs'
 export { default as XueDialog } from './packages/Dialog'
+export { default as XueNotification, notify } from './packages/Notification'
 export { default as XueTooltip } from './packages/tooltip'
 export { default as XueScrollLoad } from './packages/ScrollLoad'
 

@@ -18,7 +18,6 @@
 ### 示例完整代码
 
 ```html
-
 <template>
   <div class="demo">
     <xue-rate v-model="score" :show-text="true"></xue-rate>
