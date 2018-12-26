@@ -5,13 +5,13 @@
 <template>
   <div class="demo">
     <h4>Vue 直接使用 input 的用法</h4>
-    <label><input type="radio" value="One" v-model="picked">One</label>   
-    <label><input type="radio" value="Two" v-model="picked">Two</label>
+    <label><input v-model="picked" type="radio" value="One">One</label>
+    <label><input v-model="picked" type="radio" value="Two">Two</label>
     <span>Picked: {{ picked }}</span>
 
-    <h4>使用 xue-radio 的用法</h4>
-    <xue-radio value="ONE" v-model="selected">ONE</xue-radio>
-    <xue-radio value="TWO" v-model="selected">TWO</xue-radio>
+    <h4>使用 XueRadio 的用法</h4>
+    <XueRadio v-model="selected" value="ONE">ONE</XueRadio>
+    <XueRadio v-model="selected" value="TWO">TWO</XueRadio>
     <span>选中的值为: {{ selected }}</span>
   </div>
 </template>

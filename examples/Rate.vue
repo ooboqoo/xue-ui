@@ -1,14 +1,14 @@
 <template>
   <div class="page-rate">
-    <div class="header">Rate 评分</div>
-    <div class="content">
+    <div class="page__header">Rate 评分</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-rate v-model="score" :show-text="true"></xue-rate>
+        <XueRate v-model="score" :show-text="true" />
         <div style="padding: 20px 0 5px 0;">只读效果</div>
-        <xue-rate v-model="score2" :show-text="true" disabled></xue-rate>
+        <XueRate v-model="score2" :show-text="true" disabled />
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -30,8 +30,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.page-rate {
-}
-</style>

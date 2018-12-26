@@ -1,13 +1,13 @@
 <template>
   <div class="xue-tabs">
     <template v-if="links">
-      <router-link v-for="(link, idx) in links" :key="idx" :to="link.url">
-        {{link.text}}<sup class="badge-dot" v-if="link.dot"></sup>
-      </router-link>
+      <RouterLink v-for="(link, idx) in links" :key="idx" :to="link.url">
+        {{ link.text }}<sup v-if="link.dot" class="xue-tabs__badge-dot" />
+      </RouterLink>
     </template>
     <template v-if="tabs">
       <a v-for="(tab, idx) in tabs" :key="idx" :class="{active: tab.active}" @click="tab.click">
-        {{tab.text}}<sup class="badge-dot" v-if="tab.dot"></sup>
+        {{ tab.text }}<sup v-if="tab.dot" class="xue-tabs__badge-dot" />
       </a>
     </template>
   </div>
@@ -23,46 +23,51 @@ export default {
 </script>
 
 <style lang="scss">
-.xue-tabs a {
-  position: relative;
+.xue-tabs > a {
   display: inline-block;
-  box-sizing: border-box;
-  padding: 0 10px;
+  position: relative;
   min-width: 80px;
   height: 30px;
-  line-height: 30px;
-  vertical-align: top;
-  font-size: 14px;
-  color: #232323;
-  text-align: center;
-  background-color: #fff;
+  padding: 0 10px;
   border: solid 1px #c5c8d0;
+  background-color: #fff;
+  color: #232323;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
+  vertical-align: top;
+  box-sizing: border-box;
   user-select: none;
+
   &:first-child {
-    border-radius: 3px 0 0 3px;
     border-right: 0;
+    border-radius: 3px 0 0 3px;
   }
+
   &:last-child {
-    border-radius: 0 3px 3px 0;
     border-left: 0;
+    border-radius: 0 3px 3px 0;
   }
-  &.active, &.router-link-exact-active {
-    color: #fff;
-    background-color: #8b9eb6;
+
+  &.active,
+  &.router-link-exact-active {
     border-color: #8b9eb6;
+    background-color: #8b9eb6;
+    color: #fff;
   }
-  .badge-dot {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    width: 8px;
-    height: 8px;
-    background: #f50;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px #fff;
-    z-index: 10;
-  }
+}
+
+.xue-tabs__badge-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f50;
+  box-shadow: 0 0 0 1px #fff;
+  z-index: 10;
 }
 </style>

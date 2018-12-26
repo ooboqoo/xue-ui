@@ -1,13 +1,13 @@
 <template>
   <div class="page-date-picker">
-    <div class="header">Date Picker 日期选择器</div>
-    <div class="content">
+    <div class="page__header">Date Picker 日期选择器</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-date-picker v-model="date"></xue-date-picker>
-        <p>选中日期为：{{date}}</p>
+        <XueDatePicker v-model="date" />
+        <p>选中日期为：{{ date }}</p>
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ import Vue from 'vue'
 import { XueDatePicker } from 'xue-ui'
 import markdown from './docs/DatePicker.md'
 
-Vue.component('xue-date-picker', XueDatePicker)
+Vue.component('XueDatePicker', XueDatePicker)
 
 export default {
   data () {
@@ -28,9 +28,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.page-date-picker {
-}
-</style>
-

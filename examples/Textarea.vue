@@ -1,12 +1,12 @@
 <template>
   <div class="page-radio">
-    <div class="header">Textarea 文本框</div>
-    <div class="content">
+    <div class="page__header">Textarea 文本框</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-textarea v-model="value" maxlength="200" :placeholder="'第一行\n第二行'"></xue-textarea>
+        <XueTextarea v-model="value" maxlength="200" :placeholder="'第一行\n第二行'" />
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -30,4 +30,3 @@ export default {
 
 <style lang="scss" scoped>
 </style>
-

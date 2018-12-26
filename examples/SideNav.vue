@@ -1,45 +1,45 @@
 <template>
-<div class="page-side-nav">
-  <div class="logo">
-    <img src="./images/xue.png">
-    <span>xue-ui</span>
+  <div class="page-side-nav">
+    <div class="logo">
+      <img src="./images/xue.png">
+      <span>xue-ui</span>
+    </div>
+    <section>
+      <h3>Basic</h3>
+      <ul>
+        <li><RouterLink to="/button">Button 按钮</RouterLink></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Form</h3>
+      <ul>
+        <li><RouterLink to="/radio">Radio 单选框</RouterLink></li>
+        <li><RouterLink to="/checkbox">Checkbox 多选框</RouterLink></li>
+        <li><RouterLink to="/select">Select 选择器</RouterLink></li>
+        <li><RouterLink to="/textarea">Textarea 文本框</RouterLink></li>
+        <li><RouterLink to="/date-picker">DatePicker 日期选择器</RouterLink></li>
+        <li><RouterLink to="/date-select">DateSelect 日期选择框</RouterLink></li>
+        <li><RouterLink to="/dist-select">DistSelect 省市区三级联动</RouterLink></li>
+        <li><RouterLink to="/rate">Rate 评分</RouterLink></li>
+        <li><RouterLink to="/slider">Slider 滑块</RouterLink></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Navigation</h3>
+      <ul>
+        <li><RouterLink to="/tabs">Tabs 标签页</RouterLink></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Others</h3>
+      <ul>
+        <li><RouterLink to="/dialog">Dialog 对话框</RouterLink></li>
+        <li><RouterLink to="/notification">Notification 通知</RouterLink></li>
+        <li><RouterLink to="/tooltip">Tooltip 文字提示</RouterLink></li>
+        <li><RouterLink to="/scroll-load">ScrollLoad 滚动加载</RouterLink></li>
+      </ul>
+    </section>
   </div>
-  <section>
-    <h3>Basic</h3>
-    <ul>
-      <li><router-link to="/button">Button 按钮</router-link></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Form</h3>
-    <ul>
-      <li><router-link to="/radio">Radio 单选框</router-link></li>
-      <li><router-link to="/checkbox">Checkbox 多选框</router-link></li>
-      <li><router-link to="/select">Select 选择器</router-link></li>
-      <li><router-link to="/textarea">Textarea 文本框</router-link></li>
-      <li><router-link to="/date-picker">DatePicker 日期选择器</router-link></li>
-      <li><router-link to="/date-select">DateSelect 日期选择框</router-link></li>
-      <li><router-link to="/dist-select">DistSelect 省市区三级联动</router-link></li>
-      <li><router-link to="/rate">Rate 评分</router-link></li>
-      <li><router-link to="/slider">Slider 滑块</router-link></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Navigation</h3>
-    <ul>
-      <li><router-link to="/tabs">Tabs 标签页</router-link></li>
-    </ul>
-  </section>
-  <section>
-    <h3>Others</h3>
-    <ul>
-      <li><router-link to="/dialog">Dialog 对话框</router-link></li>
-      <li><router-link to="/notification">Notification 通知</router-link></li>
-      <li><router-link to="/tooltip">Tooltip 文字提示</router-link></li>
-      <li><router-link to="/scroll-load">ScrollLoad 滚动加载</router-link></li>
-    </ul>
-  </section>
-</div>
 </template>
 
 <script>

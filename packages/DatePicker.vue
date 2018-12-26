@@ -1,33 +1,36 @@
 <template>
   <div class="xue-date-picker" @mouseleave="onMouseleave" @mouseenter="onMouseenter">
-    <div class="date-picker-header">
+    <div class="xue-date-picker__header">
       <span class="icon" @click="prevYear">&lt;&lt;</span>
       <span class="icon" @click="prevMonth">&lt;</span>
-      <div class="title">{{title}}</div>
+      <div class="title">{{ title }}</div>
       <span class="icon" @click="nextMonth">&gt;</span>
       <span class="icon" @click="nextYear">&gt;&gt;</span>
     </div>
-    <div class="date-picker-content">
+    <div class="xue-date-picker__content">
       <table>
         <thead>
           <tr>
-            <th v-for="day in daysOfWeek" :key="day">{{day}}</th>
+            <th v-for="day in daysOfWeek" :key="day">{{ day }}</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(oneWeek, i) in daysTable" :key="i">
             <td v-for="day in oneWeek" :key="day.date"
                 :class="[day.class, {'day-this': day.date === selected}]" class="day"
-                @click="selectDay(day)" @dblclick="selectDay(day) || confirm()">{{day.text}}</td>
+                @click="selectDay(day)" @dblclick="selectDay(day) || confirm()"
+            >
+              {{ day.text }}
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="date-picker-footer">
-      <div class="btn-group">
-        <span @click="reset" class="btn">{{buttonText.reset}}</span>
-        <span @click="now" class="btn">{{buttonText.now}}</span>
-        <span @click="confirm" class="btn">{{buttonText.confirm}}</span>
+    <div class="xue-date-picker__footer">
+      <div class="button-group">
+        <span class="button" @click="reset">{{ buttonText.reset }}</span>
+        <span class="button" @click="now">{{ buttonText.now }}</span>
+        <span class="button" @click="confirm">{{ buttonText.confirm }}</span>
       </div>
     </div>
   </div>
@@ -93,6 +96,10 @@ export default {
     firstDayOfActiveMonth () {
       this.changeMonth()
     }
+  },
+  created () {
+    if (this.firstDayIsMonday) { this.daysOfWeek.push(this.daysOfWeek.shift()) }
+    this.changeMonth()
   },
   methods: {
     getValue () {
@@ -178,10 +185,6 @@ export default {
       this.$emit('mouseleave')
     }
   },
-  created () {
-    if (this.firstDayIsMonday) { this.daysOfWeek.push(this.daysOfWeek.shift()) }
-    this.changeMonth()
-  }
 }
 </script>
 
@@ -191,86 +194,104 @@ export default {
   height: 324px;
   border: 1px solid #ccc;
   z-index: 9999;
-  .date-picker-header {
-    display: flex;
-    margin: 10px 20px;
-    .icon {
-      display: inline-block;
-      padding: 4px 6px;
-      border-radius: 4px;
-      color: #999;
-      font-family: monospace;
-      font-weight: 600;
-      user-select: none;
-      &:hover {
-        background-color: #ccc;
-      }
-    }
-    .title {
-      flex: auto;
-      text-align: center;
-    }
-  }
-  .date-picker-content {
-    border: 1px solid #ccc;
-    border-width: 1px 0;
-    table {
-      width: 100%;
-      padding: 10px;
-      th {
-        font-weight: normal;
-      }
-      td {
-        padding: 5px;
-        font-size: 14px;
-        text-align: center;
-        &.day {
-          cursor: pointer;
-          &:not(.day-this):hover {
-            background-color: #999;
-          }
-        }
-      }
-    }
-  }
-  .date-picker-footer {
-    position: relative;
-    .btn-group {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0;
-      .btn {
-        height: 26px;
-        line-height: 26px;
-        margin: 0 0 0 -1px;
-        padding: 2px 10px;
-        border: 1px solid #c9c9c9;
-        white-space: nowrap;
-        font-size: 14px;
-        color: #666;
-        cursor: pointer;
-        &:first-child {
-          border-top-left-radius: 4px;
-          border-bottom-left-radius: 4px;
-        }
-        &:last-child {
-          border-top-right-radius: 4px;
-          border-bottom-right-radius: 4px;
-        }
-        &:hover {
-          color: #0099ff
-        }
-      }
-    }
-  }
-  .day-prev, .day-next {
+
+  .day-prev,
+  .day-next {
     color: #d2d2d2;
   }
 
   .day-this {
-    background-color: #0099ff;
+    background-color: #09f;
     color: #fff;
+  }
+}
+
+.xue-date-picker__header {
+  display: flex;
+  margin: 10px 20px;
+
+  .icon {
+    display: inline-block;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: #999;
+    font-family: monospace;
+    font-weight: 600;
+    user-select: none;
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+  .title {
+    flex: auto;
+    text-align: center;
+  }
+}
+
+.xue-date-picker__content {
+  border: 1px solid #ccc;
+  border-width: 1px 0;
+
+  table {
+    width: 100%;
+    padding: 10px;
+
+    th {
+      font-weight: normal;
+    }
+
+    td {
+      padding: 5px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .day {
+    cursor: pointer;
+
+    &:not(.day-this):hover {
+      background-color: #999;
+    }
+  }
+}
+
+.xue-date-picker__footer {
+  position: relative;
+
+  .button-group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+  }
+
+  .button {
+    height: 26px;
+    margin: 0 0 0 -1px;
+    padding: 2px 10px;
+    border: 1px solid #c9c9c9;
+    color: #666;
+    font-size: 14px;
+    line-height: 26px;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    &:hover {
+      color: #09f;
+    }
   }
 }
 </style>

@@ -3,27 +3,27 @@
     <svg style="position: absolute; width: 0; height: 0;">
       <defs>
         <symbol id="icon-close" viewBox="0 0 32 32">
-          <path d="M5,5 L28,28 M5,28 L28,5" style="fill: none; stroke: currentColor; stroke-width: 3;"></path>
+          <path d="M5,5 L28,28 M5,28 L28,5" style="fill: none; stroke: currentColor; stroke-width: 3;" />
         </symbol>
       </defs>
     </svg>
-    <div v-if="modal" class="dialog-mask"></div>
-    <div class="dialog-wrapper" ref="wrapper">
+    <div v-if="modal" class="dialog-mask" />
+    <div ref="wrapper" class="dialog-wrapper">
       <div class="dialog-header">
         <a v-if="showClose" @click="close">
-          <svg class="icon-svg close"><use xlink:href="#icon-close"></use></svg>
+          <svg class="icon-svg close"><use xlink:href="#icon-close" /></svg>
         </a>
         <slot name="header">
-          <div class="dialog-header">{{title}}</div>
+          <div class="dialog-header">{{ title }}</div>
         </slot>
       </div>
       <div class="dialog-body">
-        <slot></slot>
+        <slot />
       </div>
       <div class="dialog-footer">
         <slot name="footer">
-          <xue-button class="btn-outline-primary" @click="cancel">取消</xue-button>
-          <xue-button class="btn-primary" @click="confirm">确认</xue-button>
+          <XueButton class="btn-outline-primary" @click="cancel">取消</XueButton>
+          <XueButton class="btn-primary" @click="confirm">确认</XueButton>
         </slot>
       </div>
     </div>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import XueButton from './Button'
+import XueButton from '../Button.vue'
 
 export default {
   components: {
@@ -60,7 +60,7 @@ export default {
   methods: {
     close () {
       if (this.beforeClose) {
-        new Promise ((resolve, reject) => {
+        new Promise((resolve, reject) => {
           this.beforeClose(resolve)
         }).then(() => {
           this.$emit('update:visible', false)

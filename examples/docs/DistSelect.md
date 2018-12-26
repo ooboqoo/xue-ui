@@ -25,8 +25,10 @@ text    | 完成选择时触发，输出编码对应的完整省市区文本信�
 ```html
 <template>
   <div class="demo">
-    <xue-dist-select v-model="dist"></xue-dist-select>
-    <xue-dist-select :level="1" v-model="prov"></xue-dist-select>
+    <p>省市区三级联动：</p>
+    <XueDistSelect v-model="dist" style="max-width:420px;" />
+    <p>只有省一级：</p>
+    <XueDistSelect v-model="prov" :level="1" />
   </div>
 </template>
 

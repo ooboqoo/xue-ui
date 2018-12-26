@@ -1,15 +1,15 @@
 <template>
   <div class="page-select">
-    <div class="header">Select 选择器</div>
-    <div class="content">
+    <div class="page__header">Select 选择器</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
         不带过滤功能：
-        <xue-select v-model="value" :options="options" placeholder="吃点啥呢"></xue-select>
+        <XueSelect v-model="value" :options="options" placeholder="吃点啥呢" />
         带过滤功能：
-        <xue-select v-model="value" :options="options" :filter="true"></xue-select>
+        <XueSelect v-model="value" :options="options" :filter="true" />
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -37,8 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.page-select {
-}
-</style>

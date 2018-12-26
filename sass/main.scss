@@ -1,0 +1,15 @@
+@import 'markdown';
+
+body {
+  margin: 0;
+}
+
+.page__header {
+  height: 40px;
+  border-bottom: 1px solid #999;
+  font-size: 24px;
+}
+
+.page__content {
+  margin: 10px;
+}

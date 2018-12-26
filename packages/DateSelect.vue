@@ -1,10 +1,14 @@
 <template>
-  <div class="xue-date-select" >
-    <input :value="value" :placeholder="placeholder" ref="input"
-           @click="toggleMenu()" @blur="onBlur">
-    <svg class="icon"><use xlink:href="#icon-calendar"></use></svg>
-    <date-picker v-if="showMenu" :value="value" @change="onChange"
-                 @mouseleave="mouseIn = false" @mouseenter="mouseIn = true"></date-picker>
+  <div class="xue-date-select">
+    <input
+      ref="input" :value="value" :placeholder="placeholder"
+      @click="toggleMenu()" @blur="onBlur"
+    >
+    <svg class="icon"><use xlink:href="#icon-calendar" /></svg>
+    <DatePicker
+      v-if="showMenu" :value="value" @change="onChange"
+      @mouseleave="mouseIn = false" @mouseenter="mouseIn = true"
+    />
   </div>
 </template>
 
@@ -29,19 +33,19 @@ export default {
     return {
       showMenu: false,
       mouseIn: false,
-    };
+    }
   },
   methods: {
-    onChange(val) {
+    onChange (val) {
       this.mouseIn = false
       this.showMenu = false
-      this.$emit("input", val)
+      this.$emit('input', val)
     },
-    toggleMenu() {
+    toggleMenu () {
       this.mouseIn = false
       this.showMenu = !this.showMenu
     },
-    onBlur() {
+    onBlur () {
       if (!this.mouseIn) {
         this.showMenu = false
       } else {
@@ -49,7 +53,7 @@ export default {
       }
     }
   },
-};
+}
 </script>
 
 <style lang="scss">

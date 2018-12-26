@@ -1,13 +1,18 @@
 <template>
   <label class="xue-checkbox">
-    <input type="checkbox" :value="value" :disabled="disabled"
-           @focus="focus=true" @blur="focus=false"
-           @input="onChange">
-    <svg :class="{checked: value, indeterminate, disabled, focus}" viewBox="0 0 16 16">
-      <path v-if="value" fill="none" d="M1.7,7.8 l3.8,3.4 l9-8.8"></path>
-      <path v-if="indeterminate" fill="none" d="M2,8 H14"></path>
+    <input
+      type="checkbox" class="xue-checkbox__original" :disabled="disabled"
+      :value="value" @input="onChange"
+      @focus="focus=true" @blur="focus=false"
+    >
+    <svg
+      class="xue-checkbox__input"
+      :class="{checked: value, indeterminate, disabled, focus}" viewBox="0 0 16 16"
+    >
+      <path v-if="value" fill="none" d="M1.7,7.8 l3.8,3.4 l9-8.8" />
+      <path v-if="indeterminate" fill="none" d="M2,8 H14" />
     </svg>
-    <slot></slot>
+    <slot />
   </label>
 </template>
 
@@ -44,41 +49,46 @@ export default {
 </script>
 
 <style lang="scss">
-.xue-checkbox {
-  input {
+.xue-checkbox__original {
+  position: absolute;
+  opacity: 0;
+}
+
+.xue-checkbox__input {
+  width: 1em;
+  height: 1em;
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  > path {
+    transition: stroke-dashoffset .15s ease-in;
     opacity: 0;
-    position: absolute;
+    stroke: #fff;
+    stroke-width: 2.3px;
+    stroke-dashoffset: 20;
+    stroke-dasharray: 20;
   }
-  svg {
-    box-sizing: border-box;
-    width: 1em;
-    height: 1em;
-    border: 1px solid #999;
-    border-radius: 4px;
-    &.focus {
-      outline: 1px dotted Highlight;
-      outline: 5px auto -webkit-focus-ring-color;
-    }
+
+  &.focus {
+    // sass-lint:disable no-duplicate-properties no-vendor-prefixes
+    outline: 1px dotted Highlight;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  &.checked,
+  &.indeterminate {
+    border-color: #09f;
+    background-color: #09f;
+
     > path {
-      opacity: 0;
-      stroke: #fff;
-      stroke-width: 2.3px;
-      stroke-dashoffset: 20;
-      stroke-dasharray: 20;
-      transition: stroke-dashoffset 0.15s ease-in;
-    }
-    &.disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    } 
-    &.checked,
-    &.indeterminate {
-      border-color: #09f;
-      background-color: #09f;
-      > path {
-        opacity: 1;
-        stroke-dashoffset: 0;
-      }
+      opacity: 1;
+      stroke-dashoffset: 0;
     }
   }
 }

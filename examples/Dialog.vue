@@ -1,18 +1,18 @@
 <template>
   <div class="page-dialog">
-    <div class="header">Dialog 对话框</div>
-    <div class="content">
+    <div class="page__header">Dialog 对话框</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-button class="btn-primary" @click="openModal(false)">弹出弹框</xue-button>
-        <xue-button class="btn-primary" @click="openModal(true)">弹出超大弹框</xue-button>
-        <xue-button class="btn-primary" @click="openModal2">用方法弹出弹框</xue-button>
-        <xue-dialog :visible.sync="showModal" title="弹窗标题">
+        <XueButton class="xue-button--primary" @click="openModal(false)">弹出弹框</XueButton>
+        <XueButton class="xue-button--primary" @click="openModal(true)">弹出超大弹框</XueButton>
+        <XueButton class="xue-button--primary" @click="openModal2">用方法弹出弹框</XueButton>
+        <XueDialog :visible.sync="showModal" title="弹窗标题">
           <div v-if="showBig" class="dialog-content big">超大弹框 body</div>
           <div v-else class="dialog-content">弹框 body</div>
-        </xue-dialog>
+        </XueDialog>
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -51,9 +51,8 @@ export default {
         slotData: {
           text: 'body here',
         }
-      })
-      .then(data => alert('ok: ' + data))
-      .catch(err => alert('reject: ' + err))
+      }).then(data => alert('ok: ' + data))
+        .catch(err => alert('reject: ' + err))
     }
   }
 }
@@ -71,4 +70,3 @@ export default {
   }
 }
 </style>
-

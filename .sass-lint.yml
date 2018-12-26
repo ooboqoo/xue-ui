@@ -1,10 +1,16 @@
 rules:
   indentation:
     - 2
-    -
-      size: 2
-  # https://github.com/sasstools/sass-lint/blob/master/docs/rules/property-sort-order.md
+    - { size: 2 }
   property-sort-order:
     - 1
-    -
-      order: 'smacss'
+    - { order: smacss }  # https://github.com/sasstools/sass-lint/blob/master/docs/rules/property-sort-order.md
+  class-name-format:
+    - 1
+    - { convention: hyphenatedbem }
+  no-color-literals:
+    - 0
+  no-color-keywords:
+    - 0
+  force-pseudo-nesting:
+    - 0

@@ -24,8 +24,8 @@
 ```html
 <template>
   <div class="demo">
-    <xue-date-picker v-model="date"></xue-date-picker>
-    <p>选中日期为：{{date}}</p>
+    <XueDatePicker v-model="date" />
+    <p>选中日期为：{{ date }}</p>
   </div>
 </template>
 
@@ -43,6 +43,3 @@ export default {
 }
 </script>
 ```
-
-<xue-date-picker>
-</xue-date-picker>

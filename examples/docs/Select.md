@@ -12,9 +12,9 @@ filter       | 是否开启过滤功能     | Boolean | false      |
 <template>
   <div class="demo">
     不带过滤功能：
-    <xue-select v-model="value" :options="options" placeholder="吃点啥呢"></xue-select>
+    <XueSelect v-model="value" :options="options" placeholder="吃点啥呢" />
     带过滤功能：
-    <xue-select v-model="value" :options="options" :filter="true"></xue-select>
+    <XueSelect v-model="value" :options="options" :filter="true" />
   </div>
 </template>
 

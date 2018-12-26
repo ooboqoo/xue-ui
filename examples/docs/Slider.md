@@ -12,9 +12,9 @@ height    | 滑动条高度    | string  | 6px
 ```html
 <template>
   <div class="demo">
-    <xue-slider v-model="process1" :height="height"></xue-slider>
+    <XueSlider v-model="process1" :height="height" />
     <div>禁用拖动</div>
-    <xue-slider v-model="process2" disabled></xue-slider>
+    <XueSlider v-model="process2" disabled />
   </div>
 </template>
 

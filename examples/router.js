@@ -1,25 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Button from './Button'
-import Radio from './Radio'
-import Checkbox from './Checkbox'
-import Select from './Select'
-import Textarea from './Textarea'
-import DatePicker from './DatePicker'
-import DateSelect from './DateSelect'
-import DistSelect from './DistSelect'
-import Slider from './Slider'
-import Rate from './Rate'
-import Tabs from './Tabs'
-import Dialog from './Dialog'
-import Notification from './Notification'
-import Tooltip from './Tooltip'
-import ScrollLoad from './ScrollLoad'
+import Button from './Button.vue'
+import Radio from './Radio.vue'
+import Checkbox from './Checkbox.vue'
+import Select from './Select.vue'
+import Textarea from './Textarea.vue'
+import DatePicker from './DatePicker.vue'
+import DateSelect from './DateSelect.vue'
+import DistSelect from './DistSelect.vue'
+import Slider from './Slider.vue'
+import Rate from './Rate.vue'
+import Tabs from './Tabs.vue'
+import Dialog from './Dialog.vue'
+import Notification from './Notification.vue'
+import Tooltip from './Tooltip.vue'
+import ScrollLoad from './ScrollLoad.vue'
 
-import Readme from './Readme'
+import Readme from './Readme.vue'
 
 Vue.use(VueRouter)
+
+// 支持组件中 PascalCase 写法，等 vue-router 更新后再去掉此部分代码
+Vue.component('RouterView', Vue.component('router-view'))
+Vue.component('RouterLink', Vue.component('router-link'))
 
 const routes = [
   {

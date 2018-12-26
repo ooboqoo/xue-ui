@@ -10,7 +10,7 @@ module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, '../'),
   entry: {
-    'app': ['./examples/main.js', './sass/common.sass', './sass/main.sass'],
+    'app': ['./examples/main.js', './sass/common.scss', './sass/main.scss'],
   },
   output: {
     path: resolve('../dist'),

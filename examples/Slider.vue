@@ -1,17 +1,17 @@
 <template>
   <div class="page-slider">
-    <div class="header">Slider 滑块</div>
-    <div class="content">
+    <div class="page__header">Slider 滑块</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-slider v-model="process1" :height="height"></xue-slider>
+        <XueSlider v-model="process1" :height="height" />
         <div style="padding: 20px 0 5px 0;">禁用拖动</div>
-        <xue-slider v-model="process2" disabled></xue-slider>
+        <XueSlider v-model="process2" disabled />
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
     <div>
-      <slider-audio></slider-audio>
+      <SliderAudio />
     </div>
   </div>
 </template>
@@ -37,8 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.page-slider {
-}
-</style>

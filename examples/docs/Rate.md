@@ -20,9 +20,9 @@
 ```html
 <template>
   <div class="demo">
-    <xue-rate v-model="score" :show-text="true"></xue-rate>
+    <XueRate v-model="score" :show-text="true" />
     <br>只读效果
-    <xue-rate v-model="score2" :show-text="true" disabled></xue-rate>
+    <XueRate v-model="score2" :show-text="true" disabled />
   </div>
 </template>
 

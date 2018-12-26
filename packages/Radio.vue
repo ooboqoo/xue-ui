@@ -1,10 +1,10 @@
 <template>
   <label class="xue-radio" @click="onClick">
-    <input type="radio" ref="input" :disabled="disabled" :checked="checked"
-           @focus="focus=true" @blur="focus=false"
-           @change="onChange">
-    <span class="circle" :class="{checked, disabled, focus}"></span>
-    <slot></slot>
+    <input ref="input" type="radio" :disabled="disabled" :checked="checked"
+           @focus="focus=true" @blur="focus=false" @change="onChange"
+    >
+    <span class="xue-radio__input" :class="{checked, disabled, focus}" />
+    <slot />
   </label>
 </template>
 
@@ -28,70 +28,75 @@ export default {
       return this.value === this.val
     }
   },
+  mounted () {
+    this.val = this.$el.getAttribute('value')
+    this.$el.querySelector('input').setAttribute('value', this.val)
+    this.$el.removeAttribute('value')
+  },
   methods: {
-    onChange() {
+    onChange () {
       if (this.disabled) { return }
       this.$emit('input', this.val)
       this.$emit('change', this.val)
     },
-    onClick() {
+    onClick () {
       this.$refs.input.blur()
     }
   },
-  mounted() {
-    this.val = this.$el.getAttribute('value')
-    this.$el.querySelector('input').setAttribute('value', this.val)
-    this.$el.removeAttribute('value')
-  }
-};
+}
 </script>
 
 <style lang="scss">
-.xue-radio {
-  input {
+.xue-radio > input {
+  position: absolute;
+  opacity: 0;
+}
+
+.xue-radio__input {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #999;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  vertical-align: -10%;
+  box-sizing: border-box;
+  user-select: none;
+
+  &::after {
     position: absolute;
-    opacity: 0;
-  }
-  .circle {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 1em;
-    height: 1em;
-    border: 1px solid #999;
+    top: 50%;
+    left: 50%;
+    width: .25em;
+    height: .25em;
+    transform: translate(-50%,-50%) scale(0);
+    transition: transform .15s ease-in;
     border-radius: 50%;
-    background: #fff;
-    overflow: hidden;
-    vertical-align: -10%;
-    user-select: none;
-    cursor: pointer;
+    background-color: #fff;
+    content: '';
+  }
+
+  &.checked {
+    border-color: #09f;
+    background: #09f;
+
     &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: .25em;
-      height: .25em;
-      border-radius: 50%;
-      background-color: #fff;
-      transform: translate(-50%,-50%) scale(0);
-      transition: transform .15s ease-in;
+      transform: translate(-50%,-50%) scale(1);
     }
-    &.checked {
-      border-color: #09f;
-      background: #09f;
-      &::after{
-        transform: translate(-50%,-50%) scale(1);
-      }
-    }
-    &.disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-    &.focus {
-      outline: 1px dotted Highlight;
-      outline: 5px auto -webkit-focus-ring-color;
-    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  &.focus {
+    // sass-lint:disable no-duplicate-properties no-vendor-prefixes
+    outline: 1px dotted Highlight;
+    outline: 5px auto -webkit-focus-ring-color;
   }
 }
 </style>

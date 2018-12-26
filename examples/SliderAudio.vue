@@ -1,32 +1,34 @@
 <template>
   <div class="page-slider">
-    <div class="header" style="margin-top: 30px;">Audio 应用示例</div>
-    <div class="content">
+    <div class="page__header" style="margin-top: 30px;">Audio 应用示例</div>
+    <div class="page__content">
       <div class="control">
         <div class="control-bar">
-          <div class="button" @click="play">{{currentAudio && currentAudio.status === 2 ? '停' : '播'}}</div>
+          <div class="button" @click="play">{{ currentAudio && currentAudio.status === 2 ? '停' : '播' }}</div>
           <div class="slider">
-            <xue-slider :value="currentTime" @input="seek"
-                        :max="currentAudio && currentAudio.duration"
-                        :disabled="!currentAudio || currentAudio.status === 0">
-            </xue-slider>
+            <XueSlider
+              :max="currentAudio && currentAudio.duration"
+              :disabled="!currentAudio || currentAudio.status === 0"
+              :value="currentTime" @input="seek"
+            />
           </div>
-          <div class="duration">{{duration}}</div>
+          <div class="duration">{{ duration }}</div>
         </div>
         <div class="audio-list">
-          <div class="audio-item"
-               v-for="(audio, index) of audios" :key="audio.dom.src"
-               :class="{active: audio === currentAudio}"
-               @click="selectAudio(audio)">
-            <span>音频 {{+index + 1}}</span>
-            <span v-if="audio === currentAudio">{{['加载中', '当前暂停', '正在播放'][audio.status]}}</span>
+          <div
+            v-for="(audio, index) of audios" :key="audio.dom.src"
+            class="audio-item" :class="{active: audio === currentAudio}"
+            @click="selectAudio(audio)"
+          >
+            <span>音频 {{ +index + 1 }}</span>
+            <span v-if="audio === currentAudio">{{ ['加载中', '当前暂停', '正在播放'][audio.status] }}</span>
           </div>
         </div>
       </div>
       <div class="article">
         <span>原生组件</span>
-        <audio src="https://tikufile.haibian.com/english/66910546-bf8e-4495-a3c8-308d7e1c32e0.mp3" controls></audio>
-        <audio src="https://tikufile.haibian.com/english/1ff16150-0957-4b8d-a4d5-fb42a719c6c2.mp3" controls></audio>
+        <audio src="https://tikufile.haibian.com/english/66910546-bf8e-4495-a3c8-308d7e1c32e0.mp3" controls />
+        <audio src="https://tikufile.haibian.com/english/1ff16150-0957-4b8d-a4d5-fb42a719c6c2.mp3" controls />
       </div>
     </div>
   </div>
@@ -61,8 +63,26 @@ export default {
   },
   computed: {
     duration () {
-      return formatDuration(this.currentAudio && this.currentAudio.duration || 0)
+      return formatDuration((this.currentAudio && this.currentAudio.duration) || 0)
     }
+  },
+  mounted () {
+    const audios = this.$el.querySelectorAll('audio')
+    this.audios.length = 0
+    for (let audio of audios) {
+      audio.setAttribute('preload', 'auto')
+      this.audios.push({
+        status: 0,
+        duration: audio.duration,
+        dom: audio
+      })
+    }
+    this.selectAudio(this.audios[0])
+  },
+  beforeDestroy () {
+    this.currentAudio.dom.ontimeupdate = null
+    this.currentAudio.dom.onended = null
+    this.currentAudio.dom.oncanplaythrough = null
   },
   methods: {
     selectAudio (audio) {
@@ -114,24 +134,6 @@ export default {
       this.currentAudio.dom.currentTime = value
     }
   },
-  mounted () {
-    const audios = this.$el.querySelectorAll('audio')
-    this.audios.length = 0
-    for (let audio of audios) {
-      audio.setAttribute('preload', 'auto')
-      this.audios.push({
-        status: 0,
-        duration: audio.duration,
-        dom: audio
-      })
-    }
-    this.selectAudio(this.audios[0])
-  },
-  beforeDestroy () {
-    this.currentAudio.dom.ontimeupdate = null
-    this.currentAudio.dom.onended = null
-    this.currentAudio.dom.oncanplaythrough = null
-  }
 }
 </script>
 

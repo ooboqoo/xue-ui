@@ -1,7 +1,7 @@
 <template>
   <button class="xue-button" :class="{disabled}" @click="onClick">
-    <span v-if="onloading">{{text || '加载中...'}}</span>
-    <slot v-else></slot>
+    <span v-if="onloading">{{ text || '加载中...' }}</span>
+    <slot v-else />
   </button>
 </template>
 
@@ -21,6 +21,14 @@ export default {
       onloading: false,
     }
   },
+  watch: {
+    'loading': function (val) {
+      this.onloading = !!val
+      if (val && val.then) {
+        val.then(() => { this.onloading = false }).catch(() => { this.onloading = false })
+      }
+    }
+  },
   methods: {
     onClick (event) {
       if (this.disabled) { return }
@@ -35,96 +43,94 @@ export default {
       }
     }
   },
-  watch: {
-    'loading': function (val) {
-      this.onloading = !!val
-      if (val && val.then) {
-        val.then(() => this.onloading = false).catch(() => this.onloading = false)
-      }
-    }
-  }
 }
 </script>
 
 <style lang="scss">
-$blue: #0099ff;
-$light-blue: #11aaff;
+$blue: #09f;
+$light-blue: #1af;
 $gray: #6c757d;
 $light-gray: #ccc;
 
 .xue-button {
-  + .xue-button {
-    margin-left: 8px;
-  }
   display: inline-block;
-  padding: .375rem .75rem;
   min-width: 60px;
-  line-height: 1.5;
+  padding: .375rem .75rem;
   border: 1px solid transparent;
   border-radius: .25rem;
   font-weight: 400;
+  line-height: 1.5;
   text-align: center;
-  vertical-align: middle;
   white-space: nowrap;
-  user-select: none;
   cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+
+  + & {
+    margin-left: 8px;
+  }
 
   &.disabled,
   &:disabled {
-    opacity: .5;
     cursor: not-allowed;
+    opacity: .5;
   }
+}
 
-  &.btn-primary {
+.xue-button--primary {
+  border-color: $blue;
+  background-color: $blue;
+  color: #fff;
+
+  &:not(:disabled):not(.disabled):hover {
+    border-color: $light-blue;
+    background-color: $light-blue;
     color: #fff;
-    background-color: $blue;
+  }
+}
+
+.xue-button--link {
+  background-color: transparent;
+  color: $blue;
+  font-weight: 400;
+}
+
+.xue-button--outline-primary {
+  border-color: $blue;
+  background-color: transparent;
+  background-image: none;
+  color: $blue;
+
+  &:not(:disabled):not(.disabled):hover {
+    background-color: #f3f3ff;
+  }
+}
+
+.xue-button--outline-secondary {
+  border-color: $light-gray;
+  background-color: transparent;
+  background-image: none;
+  color: $gray;
+
+  &:not(:disabled):not(.disabled):hover {
     border-color: $blue;
-    &:not(:disabled):not(.disabled):hover {
-      color: #fff;
-      background-color: $light-blue;
-      border-color: $light-blue;
-    }
-  }
-
-  &.btn-link {
-    font-weight: 400;
     color: $blue;
-    background-color: transparent;
   }
+}
 
-  &.btn-outline-primary {
-    color: $blue;
-    background-color: transparent;
-    background-image: none;
-    border-color: $blue;
-    &:not(:disabled):not(.disabled):hover {
-      background-color: #f3f3ff;
-    }
+.xue-button--large {
+  padding: .6rem 1rem;
+
+  + & {
+    margin-left: 10px;
   }
+}
 
-  &.btn-outline-secondary {
-    color: $gray;
-    background-color: transparent;
-    background-image: none;
-    border-color: $light-gray;
-    &:not(:disabled):not(.disabled):hover {
-      color: $blue;
-      border-color: $blue;
-    }
-  }
+.xue-button--small {
+  padding: .2rem .5rem;
 
-  &.large {
-    padding: .6rem 1rem;
-    + .xue-button {
-      margin-left: 10px;
-    }
-  }
-
-  &.small {
-    padding: .2rem .5rem;
-    + .xue-button {
-      margin-left: 5px;
-    }
+  + & {
+    margin-left: 5px;
   }
 }
 </style>

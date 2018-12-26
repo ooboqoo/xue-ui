@@ -3,11 +3,12 @@
 ```html
 <template>
   <div class="demo">
-    <xue-tabs :links="links"></xue-tabs>
-    <router-view></router-view>
-  </div>
-  <div class="demo">
-    <xue-tabs :tabs="tabs"></xue-tabs>
+    vue-router 链接按钮效果，active 效果由本组件自动控制
+    <XueTabs :links="links" />
+    <RouterView />
+    <hr>
+    普通的按钮效果，active 状态由使用者自己控制
+    <XueTabs :tabs="tabs" />
   </div>
 </template>
 

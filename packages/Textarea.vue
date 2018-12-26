@@ -1,7 +1,7 @@
 <template>
   <div class="xue-textarea">
-    <textarea v-model="text" :placeholder="placeholder" :maxlength="maxlength"></textarea>
-    <div class="counter">{{counter}}</div>
+    <textarea v-model="text" class="xue-textarea__input" :placeholder="placeholder" :maxlength="maxlength" />
+    <div class="xue-textarea__counter">{{ counter }}</div>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   props: {
     value: String,
     maxlength: [Number, String],
-    placeholder: String
+    placeholder: String,
   },
   data () {
     return {
@@ -35,24 +35,25 @@ export default {
 
 <style lang="scss">
 .xue-textarea {
-  position: relative;
   display: inline-block;
+  position: relative;
   font-family: inherit;
-  textarea {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 5px 15px;
-    color: #666;
-    border-color: #ccc;
-  }
-  .counter {
-    position: absolute;
-    right: 10px;
-    bottom: 5px;
-    color: #999;
-    font-size: small;
-  }
+}
+
+.xue-textarea__input {
+  width: 100%;
+  height: 100%;
+  padding: 5px 15px;
+  border-color: #ccc;
+  color: #666;
+  box-sizing: border-box;
+}
+
+.xue-textarea__counter {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  color: #999;
+  font-size: small;
 }
 </style>
-

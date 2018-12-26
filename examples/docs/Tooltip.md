@@ -8,11 +8,11 @@
 ```html
 <template>
   <div class="demo">
-    <xue-button class="btn-outline-primary" v-xue-tip="'提示内容'">HOVER ME</xue-button>
-    <xue-button class="btn-outline-primary"
-                v-xue-tip="'很长很长很长的提示内容，很长很长很长的提示内容，很长很长很长的提示内容'">
-      HOVER ME
-    </xue-button>
+    <XueButton v-xue-tip="'提示内容'" class="btn-outline-primary">HOVER ME</XueButton>
+    <XueButton
+      v-xue-tip="'很长很长很长的提示内容，很长很长很长的提示内容，很长很长很长的提示内容'"
+      class="btn-outline-primary"
+    >HOVER ME</XueButton>
   </div>
 </template>
 

@@ -1,9 +1,9 @@
 ### 使用示例
 
 ```html
-<xue-checkbox v-model="box1"></xue-checkbox>
-<xue-checkbox v-model="box1" :disabled="true"></xue-checkbox>
-<xue-checkbox v-model="box1">选项一</xue-checkbox>
+<XueCheckbox v-model="box1" />
+<XueCheckbox v-model="box1" :disabled="true" />
+<XueCheckbox v-model="box1">选项一</XueCheckbox>
 ```
 
 ### 参数
@@ -25,19 +25,19 @@
 ```html
 <template>
   <div class="demo">
-    <div><span>未选中状态</span> <xue-checkbox v-model="box1"></xue-checkbox></div>
-    <div><span>选中状态</span> <xue-checkbox v-model="box2"></xue-checkbox></div>
-    <div><span>禁用状态(未选中)</span> <xue-checkbox :value="box3" :disabled="true"></xue-checkbox></div>
-    <div><span>禁用状态(选中)</span> <xue-checkbox :value="box4" :disabled="true"></xue-checkbox></div>
+    <div><span>未选中状态</span> <XueCheckbox v-model="box1" /></div>
+    <div><span>选中状态</span> <XueCheckbox v-model="box2" /></div>
+    <div><span>禁用状态(未选中)</span> <XueCheckbox :value="box3" :disabled="true" /></div>
+    <div><span>禁用状态(选中)</span> <XueCheckbox :value="box4" :disabled="true" /></div>
     <div>
       <span>带文本</span>
-      <xue-checkbox v-model="box5">选项一</xue-checkbox>
-      <xue-checkbox v-model="box6">选项二</xue-checkbox>
+      <XueCheckbox v-model="box5">选项一</XueCheckbox>
+      <XueCheckbox v-model="box6">选项二</XueCheckbox>
     </div>
     <div>
       <span>未知状态(常用于全选框)</span>
-      <xue-checkbox v-model="box7" :indeterminate="indeterminate">部分选中</xue-checkbox>
-      <xue-checkbox v-model="box7" :indeterminate="indeterminate" :disabled="true">部分选中 + 禁用</xue-checkbox>
+      <XueCheckbox v-model="box7" :indeterminate="indeterminate">部分选中</XueCheckbox>
+      <XueCheckbox v-model="box7" :indeterminate="indeterminate" :disabled="true">部分选中 + 禁用</XueCheckbox>
     </div>
   </div>
 </template>

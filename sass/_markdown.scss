@@ -1,0 +1,39 @@
+@import 'vs.css';
+
+.markdown {
+  pre > code,
+  code {
+    font-family: Consolas, 'Courier New', Courier, monospace;
+  }
+
+  pre > code {
+    font-size: 16px;
+  }
+
+  code {
+    padding: 1px .25em;
+    border-radius: .25em;
+    background-color: #f3f6f6;
+    color: #c00;
+  }
+
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: .25em 1em;
+      border-bottom: 1px solid #ccc;
+      color: #333;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    td:first-child {
+      color: red;
+    }
+  }
+}

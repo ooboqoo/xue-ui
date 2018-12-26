@@ -1,15 +1,15 @@
 <template>
   <div class="page-dist-select">
-    <div class="header">DistSelect 省市区三级联动选择器</div>
-    <div class="content">
+    <div class="page__header">DistSelect 省市区三级联动选择器</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
         <p>省市区三级联动：</p>
-        <xue-dist-select v-model="dist" style="max-width:420px;"></xue-dist-select>
+        <XueDistSelect v-model="dist" style="max-width:420px;" />
         <p>只有省一级：</p>
-        <xue-dist-select :level="1" v-model="prov"></xue-dist-select>
+        <XueDistSelect v-model="prov" :level="1" />
       </div>
-      <div class="markdown" v-html="markdown"></div>
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -31,10 +31,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.page-dist-select {
-}
-</style>
-
-

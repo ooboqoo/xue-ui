@@ -11,24 +11,26 @@ text     | 处于加载状态时的提示文案 | String                      | 
 ```html
 <template>
 <div class="demo">
-  <xue-button class="btn-primary">btn-primary</xue-button>
-  <xue-button class="btn-primary disabled">btn-primary disabled</xue-button>
-  <xue-button class="btn-link">btn-link</xue-button>
+  <XueButton class="xue-button--primary">.xue-button--primary</XueButton>
+  <XueButton class="xue-button--primary disabled">.xue-button--primary.disabled</XueButton>
+  <XueButton class="xue-button--link">.xue-button--link</XueButton>
   <br><br>
-  <xue-button class="btn-outline-primary">btn-outline-primary</xue-button>
-  <xue-button class="btn-outline-secondary">btn-outline-secondary</xue-button>
+  <XueButton class="xue-button--outline-primary">.xue-button--outline-primary</XueButton>
+  <XueButton class="xue-button--outline-secondary">.xue-button--outline-secondary</XueButton>
+
   <h4>按钮尺寸</h4>
-  <xue-button class="btn-primary large">btn-primary large</xue-button>
-  <xue-button class="btn-primary">btn-primary</xue-button>
-  <xue-button class="btn-primary small">btn-primary small</xue-button>
+  <XueButton class="xue-button--primary xue-button--large">.xue-button--primary.xue-button--large</XueButton>
+  <XueButton class="xue-button--primary">.xue-button--primary</XueButton>
+  <XueButton class="xue-button--primary xue-button--small">.xue-button--primary.xue-button--small</XueButton>
+
   <h4>异步操作状态指示 - 用法1</h4>
   <!-- 外部组件自己维护状态，这样使用灵活性更高 -->
-  <xue-button class="btn-primary" :loading="onloading1" @click="asyncOp1">加载省</xue-button>
-  <xue-button class="btn-primary" :loading="onloading2" @click="asyncOp2">加载省会</xue-button>
-  {{prov}} - {{provCapital}}
+  <XueButton class="xue-button--primary" :loading="onloading1" @click="asyncOp1">加载省</XueButton>
+  <XueButton class="xue-button--primary" :loading="onloading2" @click="asyncOp2">加载省会</XueButton>
+  {{ prov }} - {{ provCapital }}
   <h4>异步操作状态指示 - 用法2</h4>
   <!-- 外部组件不用自己维护状态，直接传入一个异步方法，方便使用但不够灵活 -->
-  <xue-button class="btn-primary" :async="loadProv" text="提交中...">执行异步任务</xue-button>
+  <XueButton class="xue-button--primary" :async="loadProv" text="提交中...">执行异步任务</XueButton>
 </div>
 </template>
 

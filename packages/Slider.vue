@@ -1,14 +1,17 @@
 <template>
-  <div class="xue-slider">
-    <div class="runway" :class="{disabled: _disabled}" :style="{height}"
-         ref="slider" @click="onSliderClick">
-      <div class="bar" :style="{width: barSize, height}"></div>
-      <div class="button" :style="buttonStyle"></div>
+  <div>
+    <div ref="slider" class="xue-slider" :class="{disabled: _disabled}" :style="{height}" @click="onSliderClick">
+      <div class="xue-slider__bar" :style="{width: barSize, height}" />
+      <div ref="button" class="xue-slider__button" :style="buttonStyle" @mousedown="onDragStart($event)" />
     </div>
   </div>
 </template>
 
 <script>
+let offsetLeft
+let cursorPosition
+let transition
+
 export default {
   props: {
     min: {
@@ -31,6 +34,11 @@ export default {
       type: String
     },
   },
+  data () {
+    return {
+      dragging: false,
+    }
+  },
   computed: {
     _disabled () {
       return !!this.disabled || this.disabled === ''
@@ -51,60 +59,89 @@ export default {
   },
   methods: {
     onSliderClick (event) {
-      if (this._disabled || this.dragging) { return }
+      if (this._disabled) { return }
       const domRect = this.$refs.slider.getBoundingClientRect()
       let value = (event.clientX - domRect.left) / domRect.width * this.max
       if (value < this.min) { value = this.min }
       if (value > this.max) { value = this.max }
       this.$emit('input', value)
-    }
+    },
+    onDragStart (e) {
+      this.dragging = true
+      offsetLeft = e.target.offsetLeft
+      cursorPosition = e.clientX
+      transition = e.target.style.transition
+      e.target.style.transition = 'none'
+      document.addEventListener('mousemove', this.onDragging)
+      document.addEventListener('mouseup', this.onDragEnd)
+    },
+    onDragging (e) {
+      if (this.dragging) {
+        this.$refs.button.style.left = offsetLeft + e.clientX - cursorPosition + 'px'
+      }
+    },
+    onDragEnd (e) {
+      this.dragging = false
+      this.$refs.button.style.transition = transition
+      this.onSliderClick(e)
+      document.removeEventListener('mousemove', this.onDragging)
+      document.removeEventListener('mouseup', this.onDragEnd)
+    },
   }
 }
 </script>
 
 <style lang="scss">
 .xue-slider {
-  .runway {
-    position: relative;
-    margin: 16px 0;
-    width: 100%;
-    height: 6px;
-    background-color: #e4e7ed;
-    border-radius: 3px;
-    cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 6px;
+  margin: 16px 0;
+  border-radius: 3px;
+  background-color: #e4e7ed;
+  cursor: pointer;
 
-    &.disabled {
-      cursor: not-allowed;
-      .bar {
-        background-color: #e4e7ed;
-      }
-      .button {
-        border-color: #e4e7ed;
-      }
+  &.disabled {
+    cursor: not-allowed;
+
+    .xue-slider__bar {
+      background-color: #e4e7ed;
     }
 
-    .bar {
-      position: absolute;
-      width: 35%;
-      height: 6px;
-      background-color: #409eff;
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-      transition: .2s;
+    .xue-slider__button {
+      border-color: #e4e7ed;
     }
+  }
+}
 
-    .button {
-      display: inline-block;
-      position: absolute;
-      margin-top: -5px;
-      margin-left: -5px;
-      width: 12px;
-      height: 12px;
-      border: 2px solid #409eff;
-      background-color: #fff;
-      border-radius: 50%;
-      transition: .2s;
-      user-select: none;
+.xue-slider__bar {
+  position: absolute;
+  width: 35%;
+  height: 6px;
+  transition: .2s;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #409eff;
+}
+
+.xue-slider__button {
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin-top: -5px;
+  margin-left: -5px;
+  transition: .2s;
+  border: 2px solid #409eff;
+  border-radius: 50%;
+  background-color: #fff;
+  user-select: none;
+
+  .xue-slider:not(.disabled) & {
+    cursor: grab;
+
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }

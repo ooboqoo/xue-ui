@@ -1,0 +1,22 @@
+.xue-tip {
+  position: absolute;
+  max-width: 420px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background-color: #ccc;
+  color: #333;
+  z-index: 9998;
+
+  &::after {
+    position: absolute;
+    bottom: -5px;
+    left: calc(50% - 5px);
+    border-width: 5px 5px 0;
+    border-style: solid;
+    border-color: #ccc;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    content: '';
+  }
+}

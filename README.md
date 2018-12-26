@@ -37,3 +37,9 @@ xue-ui
 不追求完整性，只关注业务中碰到的功能。作为试验场所或者代码片段库存在。
 
 除个别特别注明依赖的组件，其他组件直接拷贝组件单文件即可使用。
+
+
+## 参考资料
+
+* Element 组件库  http://element-cn.eleme.io/#/zh-CN/component/
+* CSS BEM 规范用法讲解  https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/

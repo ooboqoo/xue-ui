@@ -1,12 +1,12 @@
 <template>
   <div class="page-date-select">
-    <div class="header">Date Select 日期选择框</div>
-    <div class="content">
+    <div class="page__header">Date Select 日期选择框</div>
+    <div class="page__content">
       <h3>示例</h3>
       <div class="demo">
-        <xue-date-select v-model="date1"></xue-date-select>
-        <xue-date-select v-model="date2"></xue-date-select>
-        <p>选中日期为：{{date1}} ~ {{date2}}</p>
+        <XueDateSelect v-model="date1" />
+        <XueDateSelect v-model="date2" />
+        <p>选中日期为：{{ date1 }} ~ {{ date2 }}</p>
       </div>
     </div>
   </div>
@@ -27,9 +27,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.page-date-select {
-}
-</style>
-

@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Dialog from './Dialog'
+import Dialog from './Dialog.vue'
 
-export function openDialog ({options, slots, slotData = {}, callback}) {
+export default function openDialog ({options, slots, slotData = {}, callback}) {
   const _options = Object.assign({}, options)
   const beforeCreate = function () {
     if (typeof slots === 'string') { slots = {default: slots} }

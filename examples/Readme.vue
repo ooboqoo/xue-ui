@@ -1,8 +1,8 @@
 <template>
   <div class="page-index">
-    <div class="header">xue-ui</div>
-    <div class="content">
-      <div class="markdown" v-html="markdown"></div>
+    <div class="page__header">xue-ui</div>
+    <div class="page__content">
+      <div class="markdown" v-html="markdown" />
     </div>
   </div>
 </template>
@@ -18,9 +18,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.page-readme {
-}
-</style>
-
