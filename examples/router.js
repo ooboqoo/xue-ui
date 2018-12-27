@@ -16,6 +16,7 @@ import Dialog from './Dialog.vue'
 import Notification from './Notification.vue'
 import Tooltip from './Tooltip.vue'
 import ScrollLoad from './ScrollLoad.vue'
+import VirtualScroller from './VirtualScroller.vue'
 
 import Readme from './Readme.vue'
 
@@ -90,6 +91,10 @@ const routes = [
   {
     path: '/scroll-load',
     component: ScrollLoad
+  },
+  {
+    path: '/virtual-scroller',
+    component: VirtualScroller
   },
   {
     path: '',

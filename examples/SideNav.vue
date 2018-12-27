@@ -37,6 +37,7 @@
         <li><RouterLink to="/notification">Notification 通知</RouterLink></li>
         <li><RouterLink to="/tooltip">Tooltip 文字提示</RouterLink></li>
         <li><RouterLink to="/scroll-load">ScrollLoad 滚动加载</RouterLink></li>
+        <li><RouterLink to="/virtual-scroller">VirtualScroller 虚拟滚屏</RouterLink></li>
       </ul>
     </section>
   </div>
