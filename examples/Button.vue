@@ -23,6 +23,7 @@
         <h4>异步操作状态指示 - 用法2</h4>
         <XueButton class="xue-button--primary" :async="loadProv" text="提交中...">执行异步任务</XueButton>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

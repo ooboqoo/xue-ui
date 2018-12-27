@@ -1,12 +1,13 @@
 {
   "name": "xue-ui",
-  "version": "0.1.0",
-  "description": "简单的 Vue UI 组件库",
+  "version": "0.2.0",
+  "description": "每个组件都可独立使用的 Vue UI 组件库",
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-serve --config build/webpack.config.js",
     "build": "webpack --config build/webpack.config.js",
+    "eslint": "eslint --ext .js,.vue packages/** examples/**/*.vue examples/**/*.js",
     "sass-lint": "sass-lint-vue packages examples"
   },
   "keywords": [

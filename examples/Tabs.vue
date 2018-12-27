@@ -11,6 +11,7 @@
         <p>普通的按钮效果，active 状态由使用者自己控制</p>
         <XueTabs :tabs="tabs" />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

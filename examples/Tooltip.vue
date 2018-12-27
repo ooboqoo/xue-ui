@@ -13,6 +13,7 @@
           class="btn-outline-primary"
         >HOVER ME</XueButton>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

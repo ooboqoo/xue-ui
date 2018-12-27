@@ -7,6 +7,7 @@
         <XueDatePicker v-model="date" />
         <p>选中日期为：{{ date }}</p>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

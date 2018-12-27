@@ -9,6 +9,7 @@
         带过滤功能：
         <XueSelect v-model="value" :options="options" :filter="true" />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

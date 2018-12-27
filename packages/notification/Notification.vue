@@ -14,6 +14,7 @@
       <h2 class="xue-notification__header-title">{{ title }}</h2>
     </div>
     <div class="xue-notification__content">
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-if="isHtml" v-html="message" />
       <div v-else v-text="message" />
       <slot />

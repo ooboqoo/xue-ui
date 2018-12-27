@@ -9,6 +9,7 @@
         <p>只有省一级：</p>
         <XueDistSelect v-model="prov" :level="1" />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

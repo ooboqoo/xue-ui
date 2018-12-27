@@ -19,6 +19,7 @@
           <XueCheckbox v-model="box7" :indeterminate="indeterminate" :disabled="true">部分选中 + 禁用</XueCheckbox>
         </div>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

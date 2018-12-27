@@ -8,6 +8,7 @@
         <div style="padding: 20px 0 5px 0;">只读效果</div>
         <XueRate v-model="score2" :show-text="true" disabled />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

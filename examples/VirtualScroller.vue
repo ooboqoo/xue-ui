@@ -6,6 +6,7 @@
       <div class="demo">
         <VirtualScroller />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

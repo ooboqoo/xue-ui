@@ -14,6 +14,7 @@
           <ul><li v-for="item in list2" :key="item">{{ item }}</li></ul>
         </XueScrollLoad>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

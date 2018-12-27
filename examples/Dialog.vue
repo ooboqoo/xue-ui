@@ -12,6 +12,7 @@
           <div v-else class="dialog-content">弹框 body</div>
         </XueDialog>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

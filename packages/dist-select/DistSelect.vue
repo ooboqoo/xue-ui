@@ -46,6 +46,7 @@ export default {
       type: Function
     },
     placeholder: {
+      type: Object,
       default: () => ({
         prov: '—— 省 ——',
         city: '—— 市 ——',

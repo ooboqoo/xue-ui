@@ -17,6 +17,7 @@
           插槽用法 <button @click="logThis">打印 this</button>
         </XueNotification>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

@@ -6,6 +6,7 @@
       <div class="demo">
         <XueTextarea v-model="value" maxlength="200" :placeholder="'第一行\n第二行'" />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>

@@ -8,6 +8,7 @@
         <div style="padding: 20px 0 5px 0;">禁用拖动</div>
         <XueSlider v-model="process2" disabled />
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
     <div>

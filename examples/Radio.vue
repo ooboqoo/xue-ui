@@ -18,6 +18,7 @@
           <span style="padding-left:20px;">选中的值为: {{ selected }}</span>
         </div>
       </div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="markdown" v-html="markdown" />
     </div>
   </div>
