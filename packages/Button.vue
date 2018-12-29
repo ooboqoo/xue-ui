@@ -61,9 +61,9 @@ $light-gray: #ccc;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
+  vertical-align: middle;
   white-space: nowrap;
   cursor: pointer;
-  vertical-align: middle;
   user-select: none;
 
   + & {
@@ -72,8 +72,8 @@ $light-gray: #ccc;
 
   &.disabled,
   &:disabled {
-    cursor: not-allowed;
     opacity: .5;
+    cursor: not-allowed;
   }
 }
 

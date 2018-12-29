@@ -57,10 +57,11 @@ export default {
   .demo {
     div {
       margin: 10px 0;
-      span:first-child {
-        display: inline-block;
-        min-width: 160px;
-      }
+    }
+
+    span:first-child {
+      display: inline-block;
+      min-width: 160px;
     }
   }
 }

@@ -55,28 +55,28 @@ export default {
 .xue-radio__input {
   display: inline-block;
   position: relative;
+  box-sizing: border-box;
   width: 1em;
   height: 1em;
+  overflow: hidden;
   border: 1px solid #999;
   border-radius: 50%;
   background: #fff;
-  cursor: pointer;
-  overflow: hidden;
   vertical-align: -10%;
-  box-sizing: border-box;
+  cursor: pointer;
   user-select: none;
 
   &::after {
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     width: .25em;
     height: .25em;
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
     transition: transform .15s ease-in;
     border-radius: 50%;
     background-color: #fff;
-    content: '';
   }
 
   &.checked {
@@ -84,13 +84,13 @@ export default {
     background: #09f;
 
     &::after {
-      transform: translate(-50%,-50%) scale(1);
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 
   &.disabled {
-    cursor: not-allowed;
     opacity: .5;
+    cursor: not-allowed;
   }
 
   &.focus {

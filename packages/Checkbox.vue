@@ -55,19 +55,19 @@ export default {
 }
 
 .xue-checkbox__input {
+  box-sizing: border-box;
   width: 1em;
   height: 1em;
   border: 1px solid #999;
   border-radius: 4px;
-  box-sizing: border-box;
 
   > path {
     transition: stroke-dashoffset .15s ease-in;
-    opacity: 0;
-    stroke: #fff;
     stroke-width: 2.3px;
-    stroke-dashoffset: 20;
     stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    stroke: #fff;
+    opacity: 0;
   }
 
   &.focus {
@@ -77,8 +77,8 @@ export default {
   }
 
   &.disabled {
-    cursor: not-allowed;
     opacity: .5;
+    cursor: not-allowed;
   }
 
   &.checked,
@@ -87,8 +87,8 @@ export default {
     background-color: #09f;
 
     > path {
-      opacity: 1;
       stroke-dashoffset: 0;
+      opacity: 1;
     }
   }
 }

@@ -62,12 +62,14 @@ export default {
 .demo {
   display: flex;
   height: 400px;
+
   > div {
     width: 400px;
     padding: 10px;
-    border: 1px solid #ccc;
     overflow: auto;
+    border: 1px solid #ccc;
   }
+
   > div + div {
     margin-left: 20px;
   }

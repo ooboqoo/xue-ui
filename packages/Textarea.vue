@@ -41,12 +41,12 @@ export default {
 }
 
 .xue-textarea__input {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   padding: 5px 15px;
   border-color: #ccc;
   color: #666;
-  box-sizing: border-box;
 }
 
 .xue-textarea__counter {

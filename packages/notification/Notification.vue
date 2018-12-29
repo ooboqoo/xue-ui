@@ -85,16 +85,16 @@ export default {
 <style lang="scss">
 .xue-notification {
   position: fixed;
+  z-index: 9999;
+  box-sizing: border-box;
   width: 330px;
   padding: 6px 12px;
+  overflow: hidden;
   transition: opacity .3s, transform .3s, left .3s, right .3s, top .4s, bottom .3s;
   border: 1px solid #ebeef5;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-  overflow: hidden;
-  z-index: 9999;
-  box-sizing: border-box;
 
   &.top { top: 16px; }
   &.bottom { bottom: 16px; }

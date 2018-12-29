@@ -1,10 +1,10 @@
 <template>
   <div class="xue-date-select">
     <input
-      ref="input" :value="value" :placeholder="placeholder"
+      ref="input" :value="value" :placeholder="placeholder" class="xue-date-select__input"
       @click="toggleMenu()" @blur="onBlur"
     >
-    <svg class="icon"><use xlink:href="#icon-calendar" /></svg>
+    <svg class="icon xue-date-select__caret"><use xlink:href="#icon-calendar" /></svg>
     <DatePicker
       v-if="showMenu" :value="value" @change="onChange"
       @mouseleave="mouseIn = false" @mouseenter="mouseIn = true"
@@ -58,38 +58,41 @@ export default {
 
 <style lang="scss">
 .xue-date-select {
+  display: inline-block;
   position: relative;
   min-width: 160px;
   height: 40px;
   margin: 10px 1px;
-  display: inline-block;
   vertical-align: middle;
-  input {
-    -webkit-appearance: none;
-    outline: none;
-    display: inline-block;
-    padding: 0 15px;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    background-color: #fff;
-    background-image: none;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    color: #333;
-  }
-  > .icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #ddd;
-    font-size: 1.25em;
-  }
+
   .xue-date-picker {
     position: absolute;
-    line-height: initial;
     background-color: #fff;
+    line-height: initial;
   }
+}
+
+.xue-date-select__input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+  background-image: none;
+  color: #333;
+  line-height: 40px;
+  -webkit-appearance: none;
+}
+
+.xue-date-select__caret {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ddd;
+  font-size: 1.25em;
 }
 </style>

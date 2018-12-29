@@ -1,0 +1,125 @@
+# Based on: https://github.com/brigade/scss-lint/blob/master/data/property-sort-orders/smacss.txt
+
+order:
+
+  # Heading
+
+  - 'content'
+  - 'quotes'
+
+  # Box
+
+  - 'display'
+  - 'visibility'
+
+  - 'position'
+  - 'z-index'
+  - 'top'
+  - 'right'
+  - 'bottom'
+  - 'left'
+
+  - 'box-sizing'
+
+  - 'grid'
+  - 'grid-*'
+
+  - 'flex'
+  - 'flex-*'
+  - 'align-*'
+  - 'justify-content'
+  - 'order'
+
+  - 'width *'
+  - 'height *'
+
+  - 'margin *'
+
+  - 'padding *'
+
+  - 'float'
+  - 'clear'
+
+  - 'overflow *'
+
+  - 'clip'
+  - 'zoom'
+
+  - 'columns'
+  - 'column-*'
+
+  - 'table-layout'
+  - 'empty-cells'
+  - 'caption-side'
+  - 'border-spacing'
+  - 'border-collapse'
+  - 'list-style *'
+
+  # Animation
+
+  - 'transform'
+  - 'transform-origin'
+  - 'transform-style'
+  - 'backface-visibility'
+  - 'perspective'
+  - 'perspective-origin'
+
+  - 'transition *'
+
+  - 'animation *'
+
+  # Border
+
+  - 'border *'
+
+  - 'outline *'
+
+  - 'stroke *'
+
+  # Background
+
+  - 'opacity'
+
+  - 'background *'
+  - 'box-shadow'
+  - 'fill'
+
+  # Text
+
+  - 'color'
+
+  - 'font *'
+
+  - 'font-emphasize *'
+
+  - 'letter-spacing'
+  - 'line-height'
+  - 'list-style'
+  - 'word-spacing'
+
+  - 'text-align *'
+
+  - 'text-emphasis *'
+
+  - 'vertical-align'
+  - 'white-space'
+  - 'word-spacing'
+  - 'hyphens'
+
+  - 'src'
+
+  # Other
+
+  - 'tab-size'
+  - 'counter-reset'
+  - 'counter-increment'
+  - 'resize'
+  - 'cursor'
+  - 'pointer-events'
+  - 'speak'
+  - 'user-select'
+  - 'nav-index'
+  - 'nav-up'
+  - 'nav-right'
+  - 'nav-down'
+  - 'nav-left'

@@ -139,46 +139,56 @@ export default {
 
 <style lang="scss" scoped>
 .page-slider {
+
   .content {
     display: flex;
   }
+
   .control {
     width: 240px;
     border: 1px solid #ccc;
     border-radius: 4px;
+
     .control-bar {
       display: flex;
       align-items: center;
       height: 42px;
       padding: 0 10px;
       border-bottom: 2px solid #eee;
+
       .button {
-        margin: 0 4px;
         width: 24px;
         height: 24px;
-        background-color: #4ba6f9;
+        margin: 0 4px;
         border-radius: 50%;
-        text-align: center;
+        background-color: #4ba6f9;
         color: #fff;
+        text-align: center;
         cursor: pointer;
       }
+
       .slider {
         flex-grow: 1;
         margin: 0 15px;
       }
     }
+
     .audio-item {
       display: flex;
       justify-content: space-between;
       padding: 10px;
+
       &.active {
         color: #4e86f6;
       }
-      &.active, &:hover {
+
+      &.active,
+      &:hover {
         background-color: #f4f4f4;
       }
     }
   }
+
   .article {
     width: 320px;
     margin: 0 20px;

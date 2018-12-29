@@ -137,6 +137,7 @@ export default {
 
 .xue-select__input {
   display: inline-block;
+  box-sizing: border-box;
   width: 100%;
   height: 2em;
   padding: 0 15px;
@@ -147,7 +148,6 @@ export default {
   color: #333;
   font-size: inherit;
   line-height: 2em;
-  box-sizing: border-box;
   -webkit-appearance: none;
 }
 
@@ -170,38 +170,38 @@ export default {
     height: 100%;
 
     > path {
-      stroke: currentColor;
       stroke-width: 3px;
+      stroke: currentColor;
     }
   }
 }
 
 .xue-select__lists {
   position: absolute;
+  z-index: 999;
+  box-sizing: border-box;
   min-width: 100%;
   max-height: 274px;
   margin: 2px 0 0;
   padding: 6px 0;
+  overflow: auto;
+  list-style: none;
   border: 1px solid #ccc;
   background-color: #fff;
-  list-style: none;
-  overflow: auto;
-  z-index: 999;
-  box-sizing: border-box;
 }
 
 .xue-select__list-item {
   position: relative;
+  box-sizing: border-box;
   height: 34px;
   padding: 0 15px;
+  overflow: hidden;
   color: #606266;
   font-size: 14px;
   line-height: 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  overflow: hidden;
-  box-sizing: border-box;
 
   &.selected {
     color: #09f;

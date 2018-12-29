@@ -51,37 +51,39 @@ export default {
 <style lang="scss" scoped>
 .page-side-nav {
   height: 100vh;
-  background-color: #f6f6f6;
   overflow-y: auto;
+  background-color: #f6f6f6;
 
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   }
 
   &::-webkit-scrollbar {
     width: 6px;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #999;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   }
 
   .logo {
     margin: 20px 0;
     text-align: center;
+
     img {
       width: 48px;
       height: 48px;
     }
+
     span {
-      line-height: 40px;
-      font-size: 42px;
       color: #09f;
+      font-size: 42px;
+      line-height: 40px;
       vertical-align: top;
     }
   }
@@ -93,24 +95,27 @@ export default {
   h3 {
     margin: 0;
     padding-left: 10px;
+    color: #999;
     font-size: 12px;
     font-weight: normal;
-    color: #999;
   }
 
   ul {
     margin: 0;
     padding: 10px 10px 10px 20px;
-    li {
-      display: block;
-      a {
-        color: initial;
-        font-size: 14px;
-        text-decoration: none;
-        &.router-link-exact-active {
-          color: #0099ff;
-        }
-      }
+  }
+
+  li {
+    display: block;
+  }
+
+  a {
+    color: initial;
+    font-size: 14px;
+    text-decoration: none;
+
+    &.router-link-exact-active {
+      color: #09f;
     }
   }
 }

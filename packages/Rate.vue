@@ -76,8 +76,8 @@ export default {
   cursor: pointer;
 
   &[disabled] {
-    cursor: default;
     opacity: .7;
+    cursor: default;
   }
 
   &.filled,
@@ -96,10 +96,10 @@ export default {
   .icon {
     width: 16px;
     height: 16px;
-    vertical-align: middle;
-    stroke: currentColor;
     stroke-width: 1;
+    stroke: currentColor;
     fill: currentColor;
+    vertical-align: middle;
   }
 }
 

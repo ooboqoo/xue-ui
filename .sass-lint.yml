@@ -14,3 +14,14 @@ rules:
     - 0
   force-pseudo-nesting:
     - 0
+  no-vendor-prefixes:
+    - 0
+
+# SMACSS Property Order
+  # Heading
+  # Box
+  # Animation
+  # Border
+  # Background
+  # Text
+  # Other

@@ -7,23 +7,23 @@
         </symbol>
       </defs>
     </svg>
-    <div v-if="modal" class="dialog-mask" />
-    <div ref="wrapper" class="dialog-wrapper">
-      <div class="dialog-header">
+    <div v-if="modal" class="xue-dialog__mask" />
+    <div ref="wrapper" class="xue-dialog__wrapper">
+      <div class="xue-dialog__header">
         <a v-if="showClose" @click="close">
-          <svg class="icon-svg close"><use xlink:href="#icon-close" /></svg>
+          <svg class="icon-svg icon-close"><use xlink:href="#icon-close" /></svg>
         </a>
         <slot name="header">
           <div class="dialog-header">{{ title }}</div>
         </slot>
       </div>
-      <div class="dialog-body">
+      <div class="xue-dialog__body">
         <slot />
       </div>
-      <div class="dialog-footer">
+      <div class="xue-dialog__footer">
         <slot name="footer">
-          <XueButton class="btn-outline-primary" @click="cancel">取消</XueButton>
-          <XueButton class="btn-primary" @click="confirm">确认</XueButton>
+          <XueButton class="xue-button--outline-primary" @click="cancel">取消</XueButton>
+          <XueButton class="xue-button--primary" @click="confirm">确认</XueButton>
         </slot>
       </div>
     </div>
@@ -84,51 +84,55 @@ export default {
 </script>
 
 <style lang="scss">
-.xue-dialog {
-  .dialog-mask {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .dialog-wrapper {
-    position: fixed;
-    z-index: 9999;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 98vh;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  }
-  .dialog-header {
-    padding: 5px 10px;
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      color: #ccc;
-      font-size: 1.25em;
-      cursor: pointer;
-      &:hover {
-        color: red;
-      }
+.xue-dialog__mask {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.xue-dialog__wrapper {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  max-height: 98vh;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+}
+
+.xue-dialog__header {
+  padding: 5px 10px;
+
+  .icon-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #ccc;
+    font-size: 1.25em;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
     }
   }
-  .dialog-body {
-    min-width: 200px;
-    max-width: 95vw;
-    min-height: 60px;
-    max-height: calc(98vh - 100px);
-    overflow: auto;
-  }
-  .dialog-footer {
-    padding: 15px;
-    text-align: right;
-  }
+}
+
+.xue-dialog__body {
+  min-width: 200px;
+  max-width: 95vw;
+  min-height: 60px;
+  max-height: calc(98vh - 100px);
+  overflow: auto;
+}
+
+.xue-dialog__footer {
+  padding: 15px;
+  text-align: right;
 }
 </style>

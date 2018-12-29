@@ -26,6 +26,7 @@ export default {
 .xue-tabs > a {
   display: inline-block;
   position: relative;
+  box-sizing: border-box;
   min-width: 80px;
   height: 30px;
   padding: 0 10px;
@@ -36,9 +37,8 @@ export default {
   line-height: 30px;
   text-align: center;
   text-decoration: none;
-  cursor: pointer;
   vertical-align: top;
-  box-sizing: border-box;
+  cursor: pointer;
   user-select: none;
 
   &:first-child {
@@ -61,6 +61,7 @@ export default {
 
 .xue-tabs__badge-dot {
   position: absolute;
+  z-index: 10;
   top: -4px;
   right: -4px;
   width: 8px;
@@ -68,6 +69,5 @@ export default {
   border-radius: 50%;
   background: #f50;
   box-shadow: 0 0 0 1px #fff;
-  z-index: 10;
 }
 </style>

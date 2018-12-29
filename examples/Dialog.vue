@@ -62,8 +62,9 @@ export default {
 <style lang="scss" scoped>
 .page-dialog {
   .dialog-content {
-    border: 1px solid red;
     padding: 20px;
+    border: 1px solid red;
+
     &.big {
       width: 1200px;
       height: 100vh;

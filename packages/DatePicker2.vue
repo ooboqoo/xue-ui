@@ -189,10 +189,10 @@ export default {
 
 <style lang="scss">
 .xue-date-picker {
+  z-index: 9999;
   width: 274px;
   height: 324px;
   border: 1px solid #ccc;
-  z-index: 9999;
 
   .day-prev,
   .day-next {
