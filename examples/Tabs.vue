@@ -52,10 +52,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-tabs {
-  .demo {
-    padding: 10px;
-    border: 1px solid gray;
-  }
+.demo {
+  padding: 10px;
+  border: 1px solid gray;
 }
 </style>

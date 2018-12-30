@@ -53,16 +53,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-checkbox {
-  .demo {
-    div {
-      margin: 10px 0;
-    }
+.demo {
+  div {
+    margin: 10px 0;
+  }
 
-    span:first-child {
-      display: inline-block;
-      min-width: 160px;
-    }
+  span:first-child {
+    display: inline-block;
+    min-width: 160px;
   }
 }
 </style>

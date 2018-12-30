@@ -138,64 +138,61 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-slider {
+.content {
+  display: flex;
+}
 
-  .content {
+.control {
+  width: 240px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  .control-bar {
     display: flex;
-  }
+    align-items: center;
+    height: 42px;
+    padding: 0 10px;
+    border-bottom: 2px solid #eee;
 
-  .control {
-    width: 240px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-
-    .control-bar {
-      display: flex;
-      align-items: center;
-      height: 42px;
-      padding: 0 10px;
-      border-bottom: 2px solid #eee;
-
-      .button {
-        width: 24px;
-        height: 24px;
-        margin: 0 4px;
-        border-radius: 50%;
-        background-color: #4ba6f9;
-        color: #fff;
-        text-align: center;
-        cursor: pointer;
-      }
-
-      .slider {
-        flex-grow: 1;
-        margin: 0 15px;
-      }
+    .button {
+      width: 24px;
+      height: 24px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background-color: #4ba6f9;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
     }
 
-    .audio-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-
-      &.active {
-        color: #4e86f6;
-      }
-
-      &.active,
-      &:hover {
-        background-color: #f4f4f4;
-      }
+    .slider {
+      flex-grow: 1;
+      margin: 0 15px;
     }
   }
 
-  .article {
-    width: 320px;
-    margin: 0 20px;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
+  .audio-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    &.active {
+      color: #4e86f6;
+    }
+
+    &.active,
+    &:hover {
+      background-color: #f4f4f4;
+    }
   }
+}
+
+.article {
+  width: 320px;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
 }
 </style>

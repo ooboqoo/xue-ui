@@ -70,53 +70,53 @@ export default {
     background-color: #999;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   }
+}
 
-  .logo {
-    margin: 20px 0;
-    text-align: center;
+.logo {
+  margin: 20px 0;
+  text-align: center;
 
-    img {
-      width: 48px;
-      height: 48px;
-    }
-
-    span {
-      color: #09f;
-      font-size: 42px;
-      line-height: 40px;
-      vertical-align: top;
-    }
+  img {
+    width: 48px;
+    height: 48px;
   }
 
-  h2 {
-    text-align: center;
+  span {
+    color: #09f;
+    font-size: 42px;
+    line-height: 40px;
+    vertical-align: top;
   }
+}
 
-  h3 {
-    margin: 0;
-    padding-left: 10px;
-    color: #999;
-    font-size: 12px;
-    font-weight: normal;
-  }
+h2 {
+  text-align: center;
+}
 
-  ul {
-    margin: 0;
-    padding: 10px 10px 10px 20px;
-  }
+h3 {
+  margin: 0;
+  padding-left: 10px;
+  color: #999;
+  font-size: 12px;
+  font-weight: normal;
+}
 
-  li {
-    display: block;
-  }
+ul {
+  margin: 0;
+  padding: 10px 10px 10px 20px;
+}
 
-  a {
-    color: initial;
-    font-size: 14px;
-    text-decoration: none;
+li {
+  display: block;
+}
 
-    &.router-link-exact-active {
-      color: #09f;
-    }
+a {
+  color: initial;
+  font-size: 14px;
+  text-decoration: none;
+
+  &.router-link-exact-active {
+    color: #09f;
   }
 }
 </style>

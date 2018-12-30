@@ -60,15 +60,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-dialog {
-  .dialog-content {
-    padding: 20px;
-    border: 1px solid red;
+.dialog-content {
+  padding: 20px;
+  border: 1px solid red;
 
-    &.big {
-      width: 1200px;
-      height: 100vh;
-    }
+  &.big {
+    width: 1200px;
+    height: 100vh;
   }
 }
 </style>
