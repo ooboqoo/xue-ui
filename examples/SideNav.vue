@@ -1,6 +1,6 @@
 <template>
   <div class="page-side-nav">
-    <div class="logo">
+    <div class="logo" @click="$router.push('/')">
       <img src="./images/xue.png">
       <span>xue-ui</span>
     </div>
@@ -75,6 +75,10 @@ export default {
 .logo {
   margin: 20px 0;
   text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   img {
     width: 48px;
