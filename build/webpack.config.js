@@ -108,9 +108,6 @@ module.exports.module = {
   ]
 }
 
-module.exports.serve = {
-  content: [__dirname],
-  devMiddleware: {
-    stats: 'minimal'
-  }
+module.exports.devServer = {
+  contentBase: [resolve('../dist')]
 }

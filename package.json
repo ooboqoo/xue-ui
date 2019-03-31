@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack-serve --config build/webpack.config.js",
+    "dev": "webpack-dev-server --config build/webpack.config.js",
     "build": "webpack --config build/webpack.config.js",
     "eslint": "eslint --ext .js,.vue packages/** examples/**/*.vue examples/**/*.js",
     "sass-lint": "sass-lint-vue packages examples"
@@ -39,7 +39,7 @@
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.3",
     "webpack-cli": "^3.1.0",
-    "webpack-serve": "^2.0.2"
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "dayjs": "^1.6.7",
