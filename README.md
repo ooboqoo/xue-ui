@@ -43,3 +43,26 @@ xue-ui
 
 * Element 组件库  http://element-cn.eleme.io/#/zh-CN/component/
 * CSS BEM 规范用法讲解  https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+
+## 代码规范相关
+
+### ESLint & Standard & Prettier
+
+ESLint 是 linter 不支持 format，包含 代码书写格式 和 代码质量 两种类型的规则  
+Standard 是 linter 也支持 format，但仅支持 JS，不支持规则定制  
+Prettier 只是 formatter，支持 HTML CSS JS 等，仅支持非常有限的规则定制
+
+以上三者各有所长，但 Standard 与 Prettier 之间的规则有所冲突，目前项目选择方案是，使用 ESlint 对代码进行校验，
+ESlint 中配置的 Standard 的规则，而 Prettier 作为辅助，仅在必要时对选择代码进行格式化(主要是看下 Prettier 选
+择的代码书写规则)。目前项目中的代码除了方法名后的空格不遵循 Prettier，其他都能同时兼容 Standard 和 Prettier。
+
+### SASS
+
+VSCode 安装完插件 Sass 就支持 .scss 文件了 lint  
+VSCode 安装完插件 Vetur 就支持 Vue 单文件内的 `<style lang="scss">` 的 lint  
+VSCode 安装完插件 Sass Lint 就支持使用 .sass-lint.yml 对校验规则进行定制或增强，但没有跟 Vetur 打通
+
+### JS 类型检查
+
+项目中添加了 _jsconfig.json_，会利用 VSCode 自带的 TypeScript 对 JS 代码进行语义校验。

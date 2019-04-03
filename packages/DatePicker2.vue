@@ -19,9 +19,7 @@
             <td v-for="day in oneWeek" :key="day.date"
                 :class="[day.class, {'day-this': day.date === selected}]" class="day"
                 @click="selectDay(day)" @dblclick="selectDay(day) || confirm()"
-            >
-              {{ day.text }}
-            </td>
+            >{{ day.text }}</td>
           </tr>
         </tbody>
       </table>
@@ -58,7 +56,7 @@ export default {
       default: 'YYYY-MM-DD'
     },
     value: {
-      type: [Date, Number, String],  // 传入 日期 或 毫秒数 或 代表日期的字符串
+      type: [Date, Number, String], // 传入 日期 或 毫秒数 或 代表日期的字符串
       default: () => new Date()
     },
     buttonText: {
@@ -74,8 +72,8 @@ export default {
     return {
       valueType: typeof this.value,
       daysTable: [],
-      activeDay: moment(this.value),  // 临时选中的某一天
-      firstDayOfActiveMonth: moment(this.value).startOf('month')  // 当前显示月份的第一天
+      activeDay: moment(this.value), // 临时选中的某一天
+      firstDayOfActiveMonth: moment(this.value).startOf('month') // 当前显示月份的第一天
     }
   },
   computed: {
@@ -97,7 +95,9 @@ export default {
     }
   },
   created () {
-    if (this.firstDayIsMonday) { this.daysOfWeek.push(this.daysOfWeek.shift()) }
+    if (this.firstDayIsMonday) {
+      this.daysOfWeek.push(this.daysOfWeek.shift())
+    }
     this.changeMonth()
   },
   methods: {
@@ -124,7 +124,9 @@ export default {
     /** 根据最新的年月日重新绘制界面 */
     changeMonth () {
       const daysArray = []
-      const start = this.firstDayIsMonday ? this.firstDayOfActiveMonth.day() - 1 : this.firstDayOfActiveMonth.day()
+      const start = this.firstDayIsMonday
+        ? this.firstDayOfActiveMonth.day() - 1
+        : this.firstDayOfActiveMonth.day()
       const daysOfThisMonth = this.firstDayOfActiveMonth.daysInMonth()
       const daysOfPrevMonth = this.firstDayOfActiveMonth.clone().add(-1, 'month').daysInMonth()
       const prevMonthPrefix = this.firstDayOfActiveMonth.clone().add(-1, 'month').format('YYYY-M-')
@@ -183,7 +185,7 @@ export default {
     onMouseleave () {
       this.$emit('mouseleave')
     }
-  },
+  }
 }
 </script>
 
