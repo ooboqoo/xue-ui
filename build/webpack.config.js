@@ -109,5 +109,6 @@ module.exports.module = {
 }
 
 module.exports.devServer = {
-  contentBase: [resolve('../dist')]
+  contentBase: [resolve('../dist')],
+  publicPath: '/'
 }
