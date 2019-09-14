@@ -1,0 +1,7 @@
+extends:
+  - stylelint-config-standard
+  # https://github.com/cahamilton/css-property-sort-order-smacss/blob/master/index.js
+  - stylelint-config-property-sort-order-smacss
+rules:
+  number-leading-zero: never
+  no-empty-source: null

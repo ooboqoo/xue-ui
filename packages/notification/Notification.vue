@@ -3,7 +3,7 @@
     <svg style="position: absolute; width: 0; height: 0;">
       <defs>
         <symbol id="icon-close" viewBox="0 0 32 32">
-          <path d="M5,5 L28,28 M5,28 L28,5" style="fill: none; stroke: currentColor; stroke-width: 3;" />
+          <path d="M5,5 L28,28 M5,28 L28,5" style="stroke-width: 3; stroke: currentColor; fill: none; " />
         </symbol>
       </defs>
     </svg>

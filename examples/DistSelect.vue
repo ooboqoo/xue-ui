@@ -5,7 +5,7 @@
       <h3>示例</h3>
       <div class="demo">
         <p>省市区三级联动：</p>
-        <XueDistSelect v-model="dist" style="max-width:420px;" />
+        <XueDistSelect v-model="dist" style="max-width: 420px;" />
         <p>只有省一级：</p>
         <XueDistSelect v-model="prov" :level="1" />
       </div>

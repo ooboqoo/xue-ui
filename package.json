@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --config build/webpack.config.js --progress",
     "build": "webpack --config build/webpack.config.js",
     "eslint": "eslint --ext .js,.vue packages/** examples/**/*.vue examples/**/*.js",
-    "sass-lint": "sass-lint-vue packages examples",
+    "stylelint": "stylelint packages/**/*.vue examples/**/*.vue",
     "test": "jest"
   },
   "repository": {
@@ -42,8 +42,10 @@
     "jest": "24.9.0",
     "marked": "0.7.0",
     "node-sass": "^4.12.0",
-    "sass-lint-vue": "^0.4.0",
     "sass-loader": "^7.3.1",
+    "stylelint": "10.1.0",
+    "stylelint-config-property-sort-order-smacss": "5.0.0",
+    "stylelint-config-standard": "18.3.0",
     "url-loader": "^2.1.0",
     "vue-jest": "beta",
     "vue-loader": "^15.7.1",

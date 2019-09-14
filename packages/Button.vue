@@ -22,7 +22,7 @@ export default {
     }
   },
   watch: {
-    'loading': function (val) {
+    loading (val) {
       this.onloading = !!val
       if (val && val.then) {
         val.then(() => { this.onloading = false }).catch(() => { this.onloading = false })
