@@ -71,7 +71,6 @@ export default {
   }
 
   &.focus {
-    // sass-lint:disable no-duplicate-properties no-vendor-prefixes
     outline: 1px dotted Highlight;
     outline: 5px auto -webkit-focus-ring-color;
   }

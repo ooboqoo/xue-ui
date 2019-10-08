@@ -1,4 +1,8 @@
 {
   "javascript.implicitProjectConfig.checkJs": true,
-  "eslint.validate": ["javascript", "vue"],
+  "eslint.validate": [
+    "javascript",
+    "vue"
+  ],
+  "scss.validate": false,
 }

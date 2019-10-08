@@ -5,3 +5,6 @@ extends:
 rules:
   number-leading-zero: never
   no-empty-source: null
+  at-rule-no-unknown: 
+    - true
+    - { ignoreAtRules: [use] }

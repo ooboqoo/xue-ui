@@ -13,7 +13,7 @@
     <div ref="demo1">
       <h4>作为子组件监听容器滚动</h4>
       <ul><li v-for="item in list1" :key="item">{{ item }}</li></ul>
-      <XueScrollLoad :listen="demo1El" :load="loadList1" />
+      <XueScrollLoad :listen="$refs.demo1" :load="loadList1" />
     </div>
     <XueScrollLoad :load="loadList2">
       <h4>组件作为滚动容器使用</h4>
@@ -29,7 +29,6 @@ export default {
   components: { XueScrollLoad },
   data () {
     return {
-      demo1El: null,
       list1: [],
       list2: [],
     }
@@ -37,9 +36,6 @@ export default {
   created () {
     this.loadList1()
     this.loadList2()
-  },
-  mounted () {
-    this.demo1El = this.$refs.demo1
   },
   methods: {
     loadList (whichList) {

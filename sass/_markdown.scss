@@ -1,20 +1,16 @@
-@import 'vs.css';
+@use 'vs.css';
 
 .markdown {
-  pre > code,
-  code {
-    font-family: Consolas, 'Courier New', Courier, monospace;
-  }
-
-  pre > code {
-    font-size: 16px;
-  }
-
   code {
     padding: 1px .25em;
     border-radius: .25em;
     background-color: #f3f6f6;
     color: #c00;
+    font-family: Consolas, 'Courier New', Courier, monospace;
+  }
+
+  pre > code {
+    font-size: 16px;
   }
 
   table {

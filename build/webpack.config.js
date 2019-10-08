@@ -10,7 +10,7 @@ module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, '../'),
   entry: {
-    'app': ['./examples/main.js', './sass/common.scss', './sass/main.scss'],
+    app: ['./examples/main.js', './sass/common.scss', './sass/main.scss'],
   },
   output: {
     path: resolve('../dist'),
@@ -21,7 +21,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       'xue-ui$': resolve('../index.js'),
-      'vue$': 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.esm.js',
     }
   },
   devtool: 'inline-source-map',
@@ -51,36 +51,16 @@ module.exports.module = {
       loader: 'vue-loader',
     },
     {
-      test: /\.scss$/,
+      test: /\.s[ac]ss$/,
       use: [
         'vue-style-loader',
-        {
-          loader: 'css-loader',
-          options: {sourceMap: true}
-        },
+        'css-loader',
         {
           loader: 'sass-loader',
           options: {
-            includePaths: [ resolve('sass') ],
-            sourceMap: true,
-          }
-        }
-      ]
-    },
-    {
-      test: /\.sass$/,
-      use: [
-        'vue-style-loader',
-        {
-          loader: 'css-loader',
-          options: {sourceMap: true}
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            indentedSyntax: true,
-            includePaths: [ resolve('sass') ],
-            sourceMap: true,
+            sassOptions: {
+              includePaths: [resolve('sass')]
+            }
           }
         }
       ]
