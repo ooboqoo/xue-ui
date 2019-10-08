@@ -1,13 +1,16 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
 
 module.exports = {
-  mode: 'development',
+  mode: isProduction ? 'production' : 'development',
   context: path.resolve(__dirname, '../'),
   entry: {
     app: ['./examples/main.js', './sass/common.scss', './sass/main.scss'],
@@ -38,6 +41,9 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index-tpl.html'),
     }),
@@ -53,7 +59,7 @@ module.exports.module = {
     {
       test: /\.s[ac]ss$/,
       use: [
-        'vue-style-loader',
+        isProduction ? MiniCssExtractPlugin.loader : 'vue-style-loader',
         'css-loader',
         {
           loader: 'sass-loader',
